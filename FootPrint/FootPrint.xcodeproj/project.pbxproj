@@ -51,6 +51,11 @@
 		BFC252CD2819722C00E7EDDA /* FootPrint */ = {
 			isa = PBXGroup;
 			children = (
+				BFC252E02819729900E7EDDA /* Model */,
+				BFC252DF2819729100E7EDDA /* View */,
+				BFC252DE2819728A00E7EDDA /* ViewModel */,
+				BFC252DD2819728400E7EDDA /* API */,
+				BFC252DC2819727300E7EDDA /* Utils */,
 				BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */,
 				BFC252D02819722C00E7EDDA /* ContentView.swift */,
 				BFC252D22819722E00E7EDDA /* Assets.xcassets */,
@@ -65,6 +70,41 @@
 				BFC252D52819722E00E7EDDA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BFC252DC2819727300E7EDDA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BFC252DD2819728400E7EDDA /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BFC252DE2819728A00E7EDDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BFC252DF2819729100E7EDDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFC252E02819729900E7EDDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
