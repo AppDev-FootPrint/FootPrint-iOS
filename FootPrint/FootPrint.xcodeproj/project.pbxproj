@@ -21,6 +21,13 @@
 		BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F09281E9E4F001B309C /* FeedGridView.swift */; };
 		BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F0B281E9ED0001B309C /* UserStatView.swift */; };
 		BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F0D281E9F00001B309C /* ProfileActionButtonView.swift */; };
+		BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F0F281EDAAB001B309C /* SearchBar.swift */; };
+		BFFE6F12281EDADC001B309C /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F11281EDADC001B309C /* UserListView.swift */; };
+		BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F13281EDAFF001B309C /* UserCell.swift */; };
+		BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F17281EDB76001B309C /* Extensions.swift */; };
+		BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */; };
+		BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1B281EDCA2001B309C /* LocationCell.swift */; };
+		BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1D281EE63C001B309C /* HistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		BFFE6F09281E9E4F001B309C /* FeedGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGridView.swift; sourceTree = "<group>"; };
 		BFFE6F0B281E9ED0001B309C /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		BFFE6F0D281E9F00001B309C /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
+		BFFE6F0F281EDAAB001B309C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BFFE6F11281EDADC001B309C /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		BFFE6F13281EDAFF001B309C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		BFFE6F17281EDB76001B309C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListView.swift; sourceTree = "<group>"; };
+		BFFE6F1B281EDCA2001B309C /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		BFFE6F1D281EE63C001B309C /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 		BFC252DC2819727300E7EDDA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BFFE6F17281EDB76001B309C /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				BFFE6EFE281E987A001B309C /* SearchView.swift */,
+				BFFE6F0F281EDAAB001B309C /* SearchBar.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -189,6 +205,11 @@
 			isa = PBXGroup;
 			children = (
 				BFFE6F09281E9E4F001B309C /* FeedGridView.swift */,
+				BFFE6F13281EDAFF001B309C /* UserCell.swift */,
+				BFFE6F1B281EDCA2001B309C /* LocationCell.swift */,
+				BFFE6F1D281EE63C001B309C /* HistoryCell.swift */,
+				BFFE6F11281EDADC001B309C /* UserListView.swift */,
+				BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -263,14 +284,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */,
 				BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */,
 				BFFE6EF8281E9822001B309C /* FeedView.swift in Sources */,
 				BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */,
 				BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */,
 				BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */,
+				BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */,
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
+				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
+				BFFE6F12281EDADC001B309C /* UserListView.swift in Sources */,
+				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,
+				BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */,
 				BFFE6EF5281E97DC001B309C /* MainTabView.swift in Sources */,
 				BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */,
+				BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */,
 				BFFE6F01281E9894001B309C /* CreateTravel.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
 				BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */,
