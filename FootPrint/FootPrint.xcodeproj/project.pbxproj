@@ -28,6 +28,8 @@
 		BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */; };
 		BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1B281EDCA2001B309C /* LocationCell.swift */; };
 		BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1D281EE63C001B309C /* HistoryCell.swift */; };
+		BFFE6F20281FF35B001B309C /* EditTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1F281FF35B001B309C /* EditTravel.swift */; };
+		BFFE6F22281FF370001B309C /* CreateDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F21281FF370001B309C /* CreateDetailInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListView.swift; sourceTree = "<group>"; };
 		BFFE6F1B281EDCA2001B309C /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		BFFE6F1D281EE63C001B309C /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		BFFE6F1F281FF35B001B309C /* EditTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravel.swift; sourceTree = "<group>"; };
+		BFFE6F21281FF370001B309C /* CreateDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDetailInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				BFFE6F00281E9894001B309C /* CreateTravel.swift */,
+				BFFE6F1F281FF35B001B309C /* EditTravel.swift */,
+				BFFE6F21281FF370001B309C /* CreateDetailInfo.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -295,12 +301,14 @@
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
 				BFFE6F12281EDADC001B309C /* UserListView.swift in Sources */,
 				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,
+				BFFE6F20281FF35B001B309C /* EditTravel.swift in Sources */,
 				BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */,
 				BFFE6EF5281E97DC001B309C /* MainTabView.swift in Sources */,
 				BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */,
 				BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */,
 				BFFE6F01281E9894001B309C /* CreateTravel.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
+				BFFE6F22281FF370001B309C /* CreateDetailInfo.swift in Sources */,
 				BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */,
 				BFFE6EFA281E982D001B309C /* NotificationView.swift in Sources */,
 			);
