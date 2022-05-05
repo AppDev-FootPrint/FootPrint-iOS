@@ -21,12 +21,13 @@ struct MainTabView: View {
                         Image(systemName: "magnifyingglass")
                     }
                 
-                CreateTravel()
+                CreateTravelView()
                     .tabItem {
                         Image(systemName: "plus.square")
                     }
                 
-                NotificationView()
+//                NotificationView()
+                TravelView()
                     .tabItem {
                         Image(systemName: "heart")
                     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF5224322823C51700674695 /* VisitedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224312823C51700674695 /* VisitedCell.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -15,7 +16,7 @@
 		BFFE6EF8281E9822001B309C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EF7281E9822001B309C /* FeedView.swift */; };
 		BFFE6EFA281E982D001B309C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EF9281E982D001B309C /* NotificationView.swift */; };
 		BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EFE281E987A001B309C /* SearchView.swift */; };
-		BFFE6F01281E9894001B309C /* CreateTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F00281E9894001B309C /* CreateTravel.swift */; };
+		BFFE6F01281E9894001B309C /* CreateTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F00281E9894001B309C /* CreateTravelView.swift */; };
 		BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F03281E98C3001B309C /* ProfileView.swift */; };
 		BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F05281E9E13001B309C /* ProfileHeaderView.swift */; };
 		BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F09281E9E4F001B309C /* FeedGridView.swift */; };
@@ -28,11 +29,14 @@
 		BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */; };
 		BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1B281EDCA2001B309C /* LocationCell.swift */; };
 		BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1D281EE63C001B309C /* HistoryCell.swift */; };
-		BFFE6F20281FF35B001B309C /* EditTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1F281FF35B001B309C /* EditTravel.swift */; };
-		BFFE6F22281FF370001B309C /* CreateDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F21281FF370001B309C /* CreateDetailInfo.swift */; };
+		BFFE6F20281FF35B001B309C /* EditTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1F281FF35B001B309C /* EditTravelView.swift */; };
+		BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */; };
+		BFFE6F24281FF429001B309C /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F23281FF429001B309C /* TravelView.swift */; };
+		BFFE6F26281FFCFA001B309C /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F25281FFCFA001B309C /* DayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF5224312823C51700674695 /* VisitedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCell.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,7 +46,7 @@
 		BFFE6EF7281E9822001B309C /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		BFFE6EF9281E982D001B309C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		BFFE6EFE281E987A001B309C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		BFFE6F00281E9894001B309C /* CreateTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravel.swift; sourceTree = "<group>"; };
+		BFFE6F00281E9894001B309C /* CreateTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelView.swift; sourceTree = "<group>"; };
 		BFFE6F03281E98C3001B309C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BFFE6F05281E9E13001B309C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		BFFE6F09281E9E4F001B309C /* FeedGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGridView.swift; sourceTree = "<group>"; };
@@ -55,8 +59,10 @@
 		BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListView.swift; sourceTree = "<group>"; };
 		BFFE6F1B281EDCA2001B309C /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		BFFE6F1D281EE63C001B309C /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
-		BFFE6F1F281FF35B001B309C /* EditTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravel.swift; sourceTree = "<group>"; };
-		BFFE6F21281FF370001B309C /* CreateDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDetailInfo.swift; sourceTree = "<group>"; };
+		BFFE6F1F281FF35B001B309C /* EditTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravelView.swift; sourceTree = "<group>"; };
+		BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDetailInfoView.swift; sourceTree = "<group>"; };
+		BFFE6F23281FF429001B309C /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
+		BFFE6F25281FFCFA001B309C /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +179,12 @@
 		BFFE6EF1281E971B001B309C /* Travel */ = {
 			isa = PBXGroup;
 			children = (
-				BFFE6F00281E9894001B309C /* CreateTravel.swift */,
-				BFFE6F1F281FF35B001B309C /* EditTravel.swift */,
-				BFFE6F21281FF370001B309C /* CreateDetailInfo.swift */,
+				BFFE6F00281E9894001B309C /* CreateTravelView.swift */,
+				BFFE6F23281FF429001B309C /* TravelView.swift */,
+				BF5224312823C51700674695 /* VisitedCell.swift */,
+				BFFE6F1F281FF35B001B309C /* EditTravelView.swift */,
+				BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */,
+				BFFE6F25281FFCFA001B309C /* DayButton.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -297,18 +306,21 @@
 				BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */,
 				BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */,
 				BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */,
+				BFFE6F26281FFCFA001B309C /* DayButton.swift in Sources */,
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
 				BFFE6F12281EDADC001B309C /* UserListView.swift in Sources */,
+				BFFE6F24281FF429001B309C /* TravelView.swift in Sources */,
+				BF5224322823C51700674695 /* VisitedCell.swift in Sources */,
 				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,
-				BFFE6F20281FF35B001B309C /* EditTravel.swift in Sources */,
+				BFFE6F20281FF35B001B309C /* EditTravelView.swift in Sources */,
 				BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */,
 				BFFE6EF5281E97DC001B309C /* MainTabView.swift in Sources */,
 				BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */,
 				BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */,
-				BFFE6F01281E9894001B309C /* CreateTravel.swift in Sources */,
+				BFFE6F01281E9894001B309C /* CreateTravelView.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
-				BFFE6F22281FF370001B309C /* CreateDetailInfo.swift in Sources */,
+				BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */,
 				BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */,
 				BFFE6EFA281E982D001B309C /* NotificationView.swift in Sources */,
 			);

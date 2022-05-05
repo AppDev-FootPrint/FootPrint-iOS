@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateTravel: View {
+struct CreateTravelView: View {
     
     @State private var date = Date()
     @State var title: String = ""
@@ -59,8 +59,8 @@ struct CreateTravel: View {
     }
 }
 
-struct CreateTravel_Previews: PreviewProvider {
+struct CreateTravelView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTravel()
+        CreateTravelView()
     }
 }
