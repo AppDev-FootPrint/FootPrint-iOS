@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF5224322823C51700674695 /* VisitedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224312823C51700674695 /* VisitedCell.swift */; };
+		BF5224342823D85200674695 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224332823D85200674695 /* ImagePicker.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -23,7 +24,7 @@
 		BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F0B281E9ED0001B309C /* UserStatView.swift */; };
 		BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F0D281E9F00001B309C /* ProfileActionButtonView.swift */; };
 		BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F0F281EDAAB001B309C /* SearchBar.swift */; };
-		BFFE6F12281EDADC001B309C /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F11281EDADC001B309C /* UserListView.swift */; };
+		BFFE6F12281EDADC001B309C /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F11281EDADC001B309C /* SearchListView.swift */; };
 		BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F13281EDAFF001B309C /* UserCell.swift */; };
 		BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F17281EDB76001B309C /* Extensions.swift */; };
 		BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */; };
@@ -32,11 +33,12 @@
 		BFFE6F20281FF35B001B309C /* EditTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1F281FF35B001B309C /* EditTravelView.swift */; };
 		BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */; };
 		BFFE6F24281FF429001B309C /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F23281FF429001B309C /* TravelView.swift */; };
-		BFFE6F26281FFCFA001B309C /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F25281FFCFA001B309C /* DayButton.swift */; };
+		BFFE6F26281FFCFA001B309C /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F25281FFCFA001B309C /* CategoryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF5224312823C51700674695 /* VisitedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCell.swift; sourceTree = "<group>"; };
+		BF5224332823D85200674695 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		BFFE6F0B281E9ED0001B309C /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		BFFE6F0D281E9F00001B309C /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
 		BFFE6F0F281EDAAB001B309C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		BFFE6F11281EDADC001B309C /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		BFFE6F11281EDADC001B309C /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		BFFE6F13281EDAFF001B309C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		BFFE6F17281EDB76001B309C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListView.swift; sourceTree = "<group>"; };
@@ -62,7 +64,7 @@
 		BFFE6F1F281FF35B001B309C /* EditTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravelView.swift; sourceTree = "<group>"; };
 		BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDetailInfoView.swift; sourceTree = "<group>"; };
 		BFFE6F23281FF429001B309C /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
-		BFFE6F25281FFCFA001B309C /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
+		BFFE6F25281FFCFA001B309C /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BFFE6F17281EDB76001B309C /* Extensions.swift */,
+				BF5224332823D85200674695 /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -184,7 +187,7 @@
 				BF5224312823C51700674695 /* VisitedCell.swift */,
 				BFFE6F1F281FF35B001B309C /* EditTravelView.swift */,
 				BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */,
-				BFFE6F25281FFCFA001B309C /* DayButton.swift */,
+				BFFE6F25281FFCFA001B309C /* CategoryButton.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -223,7 +226,7 @@
 				BFFE6F13281EDAFF001B309C /* UserCell.swift */,
 				BFFE6F1B281EDCA2001B309C /* LocationCell.swift */,
 				BFFE6F1D281EE63C001B309C /* HistoryCell.swift */,
-				BFFE6F11281EDADC001B309C /* UserListView.swift */,
+				BFFE6F11281EDADC001B309C /* SearchListView.swift */,
 				BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */,
 			);
 			path = Items;
@@ -301,15 +304,16 @@
 			files = (
 				BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */,
 				BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */,
+				BF5224342823D85200674695 /* ImagePicker.swift in Sources */,
 				BFFE6EF8281E9822001B309C /* FeedView.swift in Sources */,
 				BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */,
 				BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */,
 				BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */,
 				BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */,
-				BFFE6F26281FFCFA001B309C /* DayButton.swift in Sources */,
+				BFFE6F26281FFCFA001B309C /* CategoryButton.swift in Sources */,
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
-				BFFE6F12281EDADC001B309C /* UserListView.swift in Sources */,
+				BFFE6F12281EDADC001B309C /* SearchListView.swift in Sources */,
 				BFFE6F24281FF429001B309C /* TravelView.swift in Sources */,
 				BF5224322823C51700674695 /* VisitedCell.swift in Sources */,
 				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,

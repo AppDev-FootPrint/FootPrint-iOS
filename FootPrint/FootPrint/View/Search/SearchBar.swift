@@ -13,6 +13,20 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
+            
+            if isEditing {
+                Button(action: {
+                    isEditing = false
+                    text = ""
+                    UIApplication.shared.endEditing()
+                }, label: {
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(.black)
+                })
+                    .transition(.move(edge: .leading)) //
+                    .animation(.default)
+            }
+            
             TextField("Search..", text: $text)
                 .padding(8)
                 .padding(.horizontal, 24)
@@ -29,19 +43,6 @@ struct SearchBar: View {
                 .onTapGesture {
                     isEditing = true
                 }
-            if isEditing {
-                Button(action: {
-                    isEditing = false
-                    text = ""
-                    UIApplication.shared.endEditing()
-                }, label: {
-                    Text("cancel")
-                        .foregroundColor(.black)
-                })
-                    .padding(.trailing, 8)
-                    .transition(.move(edge: .trailing)) //
-                    .animation(.default)
-            }
         }
     }
 }

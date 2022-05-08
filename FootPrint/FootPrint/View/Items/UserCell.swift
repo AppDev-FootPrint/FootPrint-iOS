@@ -14,7 +14,7 @@ struct UserCell: View {
             Image(systemName: "person.circle")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 48, height: 48)
+                .frame(width: 40, height: 40)
                 .clipShape(Circle())
             
             VStack(alignment: .leading) {

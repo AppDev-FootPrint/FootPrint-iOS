@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct UserListView: View {
+struct SearchListView: View {
+    
+    @State private var category : String = ""
+    
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -41,8 +44,8 @@ struct UserListView: View {
     }
 }
 
-struct UserListView_Previews: PreviewProvider {
+struct SearchListView_Previews: PreviewProvider {
     static var previews: some View {
-        UserListView()
+        SearchListView()
     }
 }

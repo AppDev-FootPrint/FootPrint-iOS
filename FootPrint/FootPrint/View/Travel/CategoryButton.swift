@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct DayButton: View {
+struct CategoryButton: View {
     
-    @State private var dayIndex: Int = 1
+    var categoryName: String = "category"
+    
     var body: some View {
         Button(action: {}, label: {
             VStack {
-                Text("Day " + String(dayIndex))
+                Text(categoryName)
                     .foregroundColor(.black)
                     .font(.system(size: 15, weight: .semibold))
-                    .padding([.leading, .top, .trailing])
-                    .frame(width: 100)
+                    .frame(width: 90)
                 
                 Rectangle()
-                    .frame(width: 100, height: 3.0, alignment: .bottom)
+                    .frame(width: 80, height: 3.0, alignment: .bottom)
                     .foregroundColor(Color.gray)
             }
         })
     }
 }
 
-struct DayButton_Previews: PreviewProvider {
+struct CategoryButton_Previews: PreviewProvider {
     static var previews: some View {
-        DayButton()
+        CategoryButton()
     }
 }

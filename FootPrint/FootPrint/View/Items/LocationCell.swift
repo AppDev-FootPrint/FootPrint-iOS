@@ -15,10 +15,10 @@ struct LocationCell: View {
     var body: some View {
         HStack {
             // image
-            Image(systemName: "leaf.circle")
+            Image(systemName: "mappin.and.ellipse")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 48, height: 48)
+                .frame(width: 40, height: 40)
                 .clipShape(Circle())
             
             VStack(alignment: .leading) {
