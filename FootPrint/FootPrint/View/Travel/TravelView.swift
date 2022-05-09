@@ -11,6 +11,8 @@ struct TravelView: View {
     
     @State private var travelTitle: String = "TRAVEL TITLE"
     
+    @State private var userState : Bool = true // 로그인한 계정의 travel이라면 true
+    
     var body: some View {
         VStack {
             HStack {
@@ -24,13 +26,12 @@ struct TravelView: View {
                     .rotationEffect(.degrees(90))
                     .padding(.trailing, 20)
             }
-            VStack {
-                HStack {
-                    ForEach (0..<3) { _ in
-                        DayButton()
-                            .padding(.leading, 10)
-                            .padding(.trailing, 10)
-                    }
+            
+            HStack {
+                ForEach (1..<4) { idx in
+                    CategoryButton(categoryName: "Day" + String(idx))
+                        .padding([.leading, .trailing], 10)
+                        .padding(.top)
                 }
             }
             
@@ -38,6 +39,14 @@ struct TravelView: View {
                 ForEach (0..<3) { _ in
                     VisitedCell()
                 }
+                
+                NavigationLink(destination: CreateDetailInfoView(), label: {
+                    Image(systemName: "plus")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(50)
+                })
             }
         }
     }
