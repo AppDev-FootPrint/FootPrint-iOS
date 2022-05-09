@@ -95,6 +95,8 @@ struct CreateDetailInfoView: View {
                                 )
                                 .padding(7)
                         })
+                        
+                        // 생성 후 아이템 추가 코드 구현
                     }
                 }
                 
@@ -134,6 +136,8 @@ struct CreateDetailInfoView: View {
                         )
                 })
                 
+                // 생성 후 아이템 추가 코드 구현
+                
                 // Tips
                 HStack {
                     Image(systemName: "questionmark")
@@ -155,6 +159,8 @@ struct CreateDetailInfoView: View {
                                     .foregroundColor(.gray)
                         )
                 })
+                
+                // 생성 후 아이템 추가 코드 구현 
             }
         }
     }
