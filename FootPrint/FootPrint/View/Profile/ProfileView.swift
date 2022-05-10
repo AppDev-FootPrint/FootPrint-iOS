@@ -11,27 +11,12 @@ struct ProfileView: View {
     
     @State private var username : String = "username"
     var body: some View {
-        ScrollView {
-            VStack() {
-                HStack {
-                    
-                    Text(username)
-                        .font(.system(size: 20, weight: .semibold))
-                        .padding()
-                    
+            ScrollView {
+                VStack {
+                    ProfileHeaderView()
+                    FeedGridView()
                     Spacer()
-                    
-                    NavigationLink (destination: PrivateSettingView(), label: {
-                        Image(systemName: "gearshape")
-                            .foregroundColor(.black)
-                            .font(.system(size: 20))
-                            .padding()
-                    })
                 }
-                ProfileHeaderView()
-                FeedGridView()
-            }
-            .padding(.top)
         }
     }
 }

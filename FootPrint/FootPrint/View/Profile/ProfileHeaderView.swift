@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             HStack{
                 Image(systemName: "person.crop.circle")
                     .resizable()
@@ -29,23 +29,17 @@ struct ProfileHeaderView: View {
                 .padding(.trailing)
             }
             
-            HStack {
-                VStack {
-                    Text("username")
-                        .font(.system(size: 15, weight: .semibold))
-                        .padding([.leading, .top])
+            VStack (alignment: .leading) {
+                Text("username")
+                    .font(.system(size: 15, weight: .semibold))
+                    .padding(.top)
+                    .padding(.leading, 10)
                     
-                    Text("자기소개란")
-                        .font(.system(size: 15))
-                        .padding(.leading)
-                        .padding(.top, 1)
-                }
-                
-                Spacer()
-                
-                ProfileActionButtonView()
-                    .padding(.trailing)
+                Text("요기는 자기소개란입니당 자기소개랑 자기소개랑 자기소개 자기소개랑 자기소개랑 자기소개 자기소개랑 자기소개랑 자기소개")
+                    .font(.system(size: 15))
+                    .padding([.top,.leading, .trailing],5)
             }
+            ProfileActionButtonView()
         }
     }
 }

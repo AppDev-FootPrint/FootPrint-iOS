@@ -42,7 +42,7 @@ struct PrivateSettingView: View {
                         }, label: {
                             Image(systemName: "checkmark")
                     })
-                    }
+                }
             }
         }
     }

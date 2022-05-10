@@ -9,22 +9,43 @@ import SwiftUI
 
 struct ProfileActionButtonView: View {
     
-    var isCurrentUser = false
+    var isCurrentUser = true
     var isFollowed = false
     
     var body: some View {
         if isCurrentUser {
-            // edit profile button
-            Button(action: {}, label: {
-                Text("Edit Profile")
+            
+            HStack {
+                // edit profile button
+                Button(action: {}, label: {
+                    Text("Edit Profile")
+                        .font(.system(size: 14, weight: .semibold))
+                        .frame(width: 170, height: 32)
+                        .foregroundColor(.black)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
+                        .padding(.trailing, 10)
+                })
+                
+                // private setting button
+                NavigationLink(destination: PrivateSettingView(), label: {
+                    HStack {
+                        Image(systemName: "gearshape")
+                        Text("Settings")
+                            
+                    }
                     .font(.system(size: 14, weight: .semibold))
-                    .frame(width: 150, height: 32)
+                    .frame(width: 170, height: 32)
                     .foregroundColor(.black)
                     .overlay(
                         RoundedRectangle(cornerRadius: 3)
                             .stroke(Color.gray, lineWidth: 1)
                     )
-            })
+                })
+            }
+
         } else {
             // show follow and messeage buttons
                 Button(action: {}, label: {
