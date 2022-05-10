@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		BF5224322823C51700674695 /* VisitedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224312823C51700674695 /* VisitedCell.swift */; };
 		BF5224342823D85200674695 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224332823D85200674695 /* ImagePicker.swift */; };
+		BF7DA9472828F19B008FE410 /* PrivateSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA9462828F19B008FE410 /* PrivateSettingView.swift */; };
+		BF7DA94928290EE3008FE410 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA94828290EE3008FE410 /* CustomTextField.swift */; };
+		BF7DA94B282915BA008FE410 /* SecuritySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA94A282915BA008FE410 /* SecuritySettingView.swift */; };
+		BF9C2B62282A6E81007E6543 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 /* Begin PBXFileReference section */
 		BF5224312823C51700674695 /* VisitedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCell.swift; sourceTree = "<group>"; };
 		BF5224332823D85200674695 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		BF7DA9462828F19B008FE410 /* PrivateSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSettingView.swift; sourceTree = "<group>"; };
+		BF7DA94828290EE3008FE410 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		BF7DA94A282915BA008FE410 /* SecuritySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuritySettingView.swift; sourceTree = "<group>"; };
+		BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -214,6 +222,8 @@
 				BFFE6F03281E98C3001B309C /* ProfileView.swift */,
 				BFFE6F0B281E9ED0001B309C /* UserStatView.swift */,
 				BFFE6F0D281E9F00001B309C /* ProfileActionButtonView.swift */,
+				BF7DA9462828F19B008FE410 /* PrivateSettingView.swift */,
+				BF7DA94A282915BA008FE410 /* SecuritySettingView.swift */,
 				BFFE6F05281E9E13001B309C /* ProfileHeaderView.swift */,
 			);
 			path = Profile;
@@ -227,6 +237,8 @@
 				BFFE6F1B281EDCA2001B309C /* LocationCell.swift */,
 				BFFE6F1D281EE63C001B309C /* HistoryCell.swift */,
 				BFFE6F11281EDADC001B309C /* SearchListView.swift */,
+				BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */,
+				BF7DA94828290EE3008FE410 /* CustomTextField.swift */,
 				BFFE6F19281EDBE1001B309C /* RecentSearchListView.swift */,
 			);
 			path = Items;
@@ -305,11 +317,15 @@
 				BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */,
 				BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */,
 				BF5224342823D85200674695 /* ImagePicker.swift in Sources */,
+				BF7DA9472828F19B008FE410 /* PrivateSettingView.swift in Sources */,
 				BFFE6EF8281E9822001B309C /* FeedView.swift in Sources */,
 				BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */,
 				BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */,
 				BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */,
+				BF7DA94928290EE3008FE410 /* CustomTextField.swift in Sources */,
+				BF9C2B62282A6E81007E6543 /* CustomSecureField.swift in Sources */,
 				BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */,
+				BF7DA94B282915BA008FE410 /* SecuritySettingView.swift in Sources */,
 				BFFE6F26281FFCFA001B309C /* CategoryButton.swift in Sources */,
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
