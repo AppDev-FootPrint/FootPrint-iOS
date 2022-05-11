@@ -13,7 +13,8 @@ struct FeedCell: View {
     @State var numberOfHeart: Int = 1_000
     @State var numberOfComment: Int = 217
     
-    @State var clipped: Bool = false
+    @State var isHeartClicked: Bool = false
+    @State var isClipped: Bool = false
     var body: some View {
         HStack {
             
@@ -39,10 +40,24 @@ struct FeedCell: View {
                 
                 HStack {
                     VStack {
-                        Image(systemName: "heart")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 25)
+                        Button(action: {
+                            isHeartClicked.toggle()
+                        }, label: {
+                            if isHeartClicked {
+                                Image(systemName: "heart.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                        .padding(4)
+                                        .foregroundColor(.red)
+                            } else {
+                                Image(systemName: "heart")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                                    .padding(4)
+                            }
+                        })
                         
                         if numberOfHeart > 999 {
                             Text("999+")
@@ -72,9 +87,9 @@ struct FeedCell: View {
                     Spacer()
                     
                     Button(action: {
-                        clipped.toggle()
+                        isClipped.toggle()
                     }, label: {
-                        if clipped {
+                        if isClipped {
                             Image(systemName: "bookmark.fill")
                                 .resizable()
                                 .scaledToFit()

@@ -12,7 +12,7 @@ struct DetailView: View {
     @State var locName: String = "담배가게"
     @State var comment : String = "담배가 정말 맛있었던 곳"
 
-    @State var isHeartClick: Bool = false
+    @State var isHeartClicked: Bool = false
     @State var isClipped: Bool = false
     var body: some View {
         ScrollView {
@@ -49,9 +49,9 @@ struct DetailView: View {
                 // acton buttons
                 HStack(spacing: 10) {
                     Button(action: {
-                        isHeartClick.toggle()
+                        isHeartClicked.toggle()
                     }, label: {
-                        if isHeartClick {
+                        if isHeartClicked {
                             Image(systemName: "heart.fill")
                                     .resizable()
                                     .scaledToFit()
