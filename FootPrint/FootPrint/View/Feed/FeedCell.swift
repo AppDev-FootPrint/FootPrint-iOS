@@ -72,11 +72,7 @@ struct FeedCell: View {
                     Spacer()
                     
                     Button(action: {
-                        if clipped {
-                            clipped = false
-                        } else {
-                            clipped = true
-                        }
+                        clipped.toggle()
                     }, label: {
                         if clipped {
                             Image(systemName: "bookmark.fill")
