@@ -4,6 +4,7 @@
 //
 //  Created by 문다 on 2022/05/01.
 //
+// figma : MainPage
 
 import SwiftUI
 
@@ -16,7 +17,7 @@ struct FeedGridView: View {
         LazyVGrid(columns: items, content: {
             ForEach (0 ..< 10) { _ in
                NavigationLink(
-                destination: FeedView(),
+                destination: TravelView(),
                 label: {
                     Image(systemName: "photo")
                         .resizable()

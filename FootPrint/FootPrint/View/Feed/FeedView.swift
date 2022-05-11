@@ -2,14 +2,21 @@
 //  FeedView.swift
 //  FootPrint
 //
-//  Created by 문다 on 2022/05/01.
+//  Created by 문다 on 2022/05/11.
 //
 
 import SwiftUI
 
 struct FeedView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            ForEach (0..<10) { _ in
+                NavigationLink (destination: TravelView(), label: {
+                    FeedCell()
+                        .foregroundColor(.black)
+                })
+            }
+        }
     }
 }
 
