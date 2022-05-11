@@ -14,6 +14,7 @@ struct FeedView: View {
                 NavigationLink (destination: TravelView(), label: {
                     FeedCell()
                         .foregroundColor(.black)
+                    // !! 북마크 클릭시 셀이 깜빡이는 현상
                 })
             }
         }
