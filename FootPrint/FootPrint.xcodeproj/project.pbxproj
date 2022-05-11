@@ -15,6 +15,7 @@
 		BF9C2B62282A6E81007E6543 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */; };
 		BF9C2B65282B99CF007E6543 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B64282B99CF007E6543 /* FeedView.swift */; };
 		BF9C2B67282BAF16007E6543 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B66282BAF16007E6543 /* FeedCell.swift */; };
+		BF9C2B69282C136F007E6543 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B68282C136F007E6543 /* DetailView.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		BF9C2B64282B99CF007E6543 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		BF9C2B66282BAF16007E6543 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		BF9C2B68282C136F007E6543 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				BFFE6F00281E9894001B309C /* CreateTravelView.swift */,
 				BFFE6F23281FF429001B309C /* TravelView.swift */,
+				BF9C2B68282C136F007E6543 /* DetailView.swift */,
 				BF5224312823C51700674695 /* VisitedCell.swift */,
 				BFFE6F1F281FF35B001B309C /* EditTravelView.swift */,
 				BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */,
@@ -333,6 +336,7 @@
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
 				BFFE6F12281EDADC001B309C /* SearchListView.swift in Sources */,
+				BF9C2B69282C136F007E6543 /* DetailView.swift in Sources */,
 				BFFE6F24281FF429001B309C /* TravelView.swift in Sources */,
 				BF5224322823C51700674695 /* VisitedCell.swift in Sources */,
 				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,

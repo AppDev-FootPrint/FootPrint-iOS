@@ -30,12 +30,11 @@ struct TravelView: View {
                     } else { // 스크랩한 경우
                         Image(systemName: "bookmark.fill")
                     }
-                    
+                } else { // 사용자 본인의 글인 경우 
+                    Image(systemName: "ellipsis")
+                        .rotationEffect(.degrees(90))
+                        .padding(.trailing, 20)
                 }
-                
-                Image(systemName: "ellipsis")
-                    .rotationEffect(.degrees(90))
-                    .padding(.trailing, 20)
             }
             
             HStack {
@@ -48,7 +47,10 @@ struct TravelView: View {
             
             ScrollView {
                 ForEach (0..<3) { _ in
-                    VisitedCell()
+                    NavigationLink (destination: DetailView(), label: {
+                        VisitedCell()
+                            .foregroundColor(.black)
+                    })
                 }
                 
                 NavigationLink(destination: CreateDetailInfoView(), label: {
