@@ -48,14 +48,12 @@ struct FeedCell: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 30, height: 30)
-                                        .padding(4)
                                         .foregroundColor(.red)
                             } else {
                                 Image(systemName: "heart")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 30, height: 30)
-                                    .padding(4)
                             }
                         })
                         
@@ -73,7 +71,7 @@ struct FeedCell: View {
                         Image(systemName: "bubble.left")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 25)
+                            .frame(height: 30)
                         
                         if numberOfComment > 999 {
                             Text("999+")
