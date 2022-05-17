@@ -20,6 +20,7 @@
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
 		BFC252D62819722E00E7EDDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D52819722E00E7EDDA /* Preview Assets.xcassets */; };
+		BFF60D752833D46500EBC809 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF60D742833D46500EBC809 /* PriceCell.swift */; };
 		BFFE6EF5281E97DC001B309C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EF4281E97DC001B309C /* MainTabView.swift */; };
 		BFFE6EFA281E982D001B309C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EF9281E982D001B309C /* NotificationView.swift */; };
 		BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EFE281E987A001B309C /* SearchView.swift */; };
@@ -57,6 +58,7 @@
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFC252D22819722E00E7EDDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC252D52819722E00E7EDDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFF60D742833D46500EBC809 /* PriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		BFFE6EF4281E97DC001B309C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BFFE6EF9281E982D001B309C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		BFFE6EFE281E987A001B309C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				BFFE6F23281FF429001B309C /* TravelView.swift */,
 				BF9C2B68282C136F007E6543 /* DetailView.swift */,
 				BF5224312823C51700674695 /* VisitedCell.swift */,
+				BFF60D742833D46500EBC809 /* PriceCell.swift */,
 				BFFE6F1F281FF35B001B309C /* EditTravelView.swift */,
 				BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */,
 				BFFE6F25281FFCFA001B309C /* CategoryButton.swift */,
@@ -349,6 +352,7 @@
 				BFFE6F01281E9894001B309C /* CreateTravelView.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
 				BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */,
+				BFF60D752833D46500EBC809 /* PriceCell.swift in Sources */,
 				BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */,
 				BFFE6EFA281E982D001B309C /* NotificationView.swift in Sources */,
 			);
