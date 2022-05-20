@@ -26,8 +26,8 @@ struct MainTabView: View {
                         Image(systemName: "plus.square")
                     }
                 
-//                NotificationView()
-                TravelView()
+                NotificationView()
+//                TravelView()
                     .tabItem {
                         Image(systemName: "heart")
                     }
