@@ -13,6 +13,10 @@ struct CreateDetailInfoView: View {
     @State private var comment: String = ""
     @State private var isPrivate: Bool = false
     
+    @State private var selectedImage: UIImage?
+    @State private var image: Image?
+    @State var imagePickerPresented = false
+    
     var body: some View {
         VStack {
             
@@ -81,22 +85,40 @@ struct CreateDetailInfoView: View {
                                 .padding(7)
                         }
                         
-                        // !! duplicated - dotted box
-                        Button(action: {}, label: {
-                            Image(systemName: "plus")
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundColor(.gray)
-                                .frame(width:40, height: 40)
-                                .padding(30)
-                                .overlay(Rectangle()
-                                            .stroke(style: StrokeStyle(lineWidth: 2, dash: [15]))
-                                            .foregroundColor(.gray)
-                                )
-                                .padding(7)
-                        })
-                        
                         // 생성 후 아이템 추가 코드 구현
+                        
+                        ZStack {
+                            if let image = image {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .foregroundColor(.white)
+                                    .frame(width: 80, height: 80)
+                                    .padding(10)
+                                    .background(Color.gray)
+                                    .cornerRadius(10)
+                                    .padding(7)
+                                
+                            } else {
+                                Button(action: {imagePickerPresented.toggle()}, label: {
+                                    Image(systemName: "plus")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.gray)
+                                        .frame(width:40, height: 40)
+                                        .padding(30)
+                                        .overlay(Rectangle()
+                                                    .stroke(style: StrokeStyle(lineWidth: 2, dash: [15]))
+                                                    .foregroundColor(.gray)
+                                        )
+                                        .padding(7)
+                                })
+                                    .sheet(isPresented: $imagePickerPresented, onDismiss: loadImage, content: {
+                                    ImagePicker(image: $selectedImage)
+                                })
+                                .padding()
+                            }
+                        }
                     }
                 }
                 
@@ -165,6 +187,15 @@ struct CreateDetailInfoView: View {
         }
     }
 }
+
+
+extension CreateDetailInfoView {
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        image = Image(uiImage: selectedImage)
+    }
+}
+
 
 struct CreateDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
