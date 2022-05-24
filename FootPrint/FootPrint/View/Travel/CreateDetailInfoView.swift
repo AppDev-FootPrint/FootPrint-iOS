@@ -17,6 +17,9 @@ struct CreateDetailInfoView: View {
     @State private var image: Image?
     @State var imagePickerPresented = false
     
+    @State var numberOfPriceInfo : Int
+    @State var numberOfTipInfo : Int
+    
     var body: some View {
         VStack {
             
@@ -144,8 +147,14 @@ struct CreateDetailInfoView: View {
                 }
                 .padding()
                 
+                ForEach (0..<numberOfPriceInfo, id:\.self) { _ in
+                    PriceCell()
+                }
+                
                 // !! duplicated - dotted box
-                Button(action: {}, label: {
+                Button(action: {
+                    self.numberOfPriceInfo += 1
+                }, label: {
                     Image(systemName: "plus")
                         .resizable()
                         .scaledToFit()
@@ -199,6 +208,6 @@ extension CreateDetailInfoView {
 
 struct CreateDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateDetailInfoView()
+        CreateDetailInfoView(numberOfPriceInfo: 0, numberOfTipInfo: 1)
     }
 }

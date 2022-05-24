@@ -18,13 +18,13 @@ struct PriceCell: View {
         HStack {
             TextField("contents...", text: $content)
                 .padding(10)
-                .border(.black, width: 1)
+                .border(.gray, width: 1)
                 .padding(.leading)
             
             TextField("price...", text: $price)
-                .frame(width: 100)
+                .frame(width: 80)
                 .padding(10)
-                .border(.black, width: 1)
+                .border(.gray, width: 1)
                 .padding(.trailing)
         }
     }
