@@ -17,45 +17,39 @@ struct FeedCell: View {
     @State var isClipped: Bool = false
     var body: some View {
         HStack {
-            
-            Image(systemName: "photo")
+            Image("thumbnail")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 160, height: 180)
+                .frame(width: 200, height: 180)
                 .clipped()
-                .padding(15)
+                .cornerRadius(10)
+                .padding([.leading, .top, .bottom], 10)
             
             VStack(alignment: .leading) {
                 HStack {
                     Image(systemName: "person.circle")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 40)
+                        .frame(width: 20)
                     
                     Text("username")
                 }
                 
                 Text("담배가게 여행")
-                    .padding([.top, .bottom])
+                    .padding(.top, 10)
+                    .padding(.bottom, 30)
                 
                 HStack {
                     VStack {
-                        Button(action: {
-                            isHeartClicked.toggle()
-                        }, label: {
-                            if isHeartClicked {
-                                Image(systemName: "heart.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                        .foregroundColor(.red)
-                            } else {
-                                Image(systemName: "heart")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 30, height: 30)
+                        Image(systemName: isHeartClicked ? "heart.fill" : "heart")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
+                            .foregroundColor(isHeartClicked ? .red : .black)
+                            .onTapGesture {
+                                isHeartClicked.toggle()
                             }
-                        })
+
                         
                         if numberOfHeart > 999 {
                             Text("999+")
@@ -71,7 +65,10 @@ struct FeedCell: View {
                         Image(systemName: "bubble.left")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 30)
+                            .frame(height: 25)
+                            .onTapGesture {
+                                
+                            }
                         
                         if numberOfComment > 999 {
                             Text("999+")
@@ -84,28 +81,16 @@ struct FeedCell: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        isClipped.toggle()
-                    }, label: {
-                        if isClipped {
-                            Image(systemName: "bookmark.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 25)
-                                .padding(.bottom, 25)
-                                .padding(.trailing, 15)
-                                .foregroundColor(.black)
+                    Image(systemName: isClipped ? "bookmark.fill" : "bookmark")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 25)
+                        .padding(.bottom, 25)
+                        .padding(.trailing, 15)
+                        .foregroundColor(.black)
+                        .onTapGesture {
+                            isClipped.toggle()
                         }
-                        else {
-                            Image(systemName: "bookmark")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 25)
-                                .padding(.bottom, 25)
-                                .padding(.trailing, 15)
-                                .foregroundColor(.black)
-                        }
-                    })
                 }
             }
             Spacer()
