@@ -8,5 +8,7 @@ import SwiftUI
 
 struct User: Identifiable, Codable {
     let id: Int
-    var email: String
+    var username: String
+    var password: String
+    var nickname: String
 }
