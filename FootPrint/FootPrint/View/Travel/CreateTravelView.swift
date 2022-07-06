@@ -45,7 +45,7 @@ struct CreateTravelView: View {
                 })
                 
                 // 새 여행 피드가 생성된 프로필 뷰로 전환
-                NavigationLink(destination: ProfileView(), label: {
+                NavigationLink(destination: TravelView(), label: {
                     Text("Apply")
                         .foregroundColor(.white)
                         .padding(7)

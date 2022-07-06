@@ -36,16 +36,14 @@ struct DetailView: View {
                         .rotationEffect(.degrees(90))
                         .padding(.trailing, 20)
                 }
+                .padding(.top)
                 .padding(.bottom, 10)
                 
                 // !! 이미지 여러장 넘기는 액션 필요
-                // post image
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxHeight: 400)
-                    .clipped()
+                ImageSlider()
+                    .frame(height: 300)
                 
+
                 // acton buttons
                 HStack(spacing: 10) {
                     Button(action: {
@@ -133,6 +131,7 @@ struct DetailView: View {
                 .padding()
                 
             }
+            .padding(.top)
         }
     }
 }

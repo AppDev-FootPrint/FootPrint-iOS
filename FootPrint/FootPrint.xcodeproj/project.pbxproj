@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3904B228756629008C27F7 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3904B128756629008C27F7 /* ImageSlider.swift */; };
 		BF5224322823C51700674695 /* VisitedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224312823C51700674695 /* VisitedCell.swift */; };
 		BF5224342823D85200674695 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5224332823D85200674695 /* ImagePicker.swift */; };
 		BF7DA9472828F19B008FE410 /* PrivateSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA9462828F19B008FE410 /* PrivateSettingView.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF3904B128756629008C27F7 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
 		BF5224312823C51700674695 /* VisitedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCell.swift; sourceTree = "<group>"; };
 		BF5224332823D85200674695 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		BF7DA9462828F19B008FE410 /* PrivateSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSettingView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				BFFE6F17281EDB76001B309C /* Extensions.swift */,
 				BF5224332823D85200674695 /* ImagePicker.swift */,
+				BF3904B128756629008C27F7 /* ImageSlider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -272,6 +275,8 @@
 			dependencies = (
 			);
 			name = FootPrint;
+			packageProductDependencies = (
+			);
 			productName = FootPrint;
 			productReference = BFC252CB2819722C00E7EDDA /* FootPrint.app */;
 			productType = "com.apple.product-type.application";
@@ -300,6 +305,8 @@
 				Base,
 			);
 			mainGroup = BFC252C22819722C00E7EDDA;
+			packageReferences = (
+			);
 			productRefGroup = BFC252CC2819722C00E7EDDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -354,6 +361,7 @@
 				BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */,
 				BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */,
 				BFFE6F01281E9894001B309C /* CreateTravelView.swift in Sources */,
+				BF3904B228756629008C27F7 /* ImageSlider.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
 				BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */,
 				BFF60D752833D46500EBC809 /* PriceCell.swift in Sources */,
