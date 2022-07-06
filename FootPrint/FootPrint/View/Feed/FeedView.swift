@@ -15,7 +15,7 @@ struct FeedView: View {
                     FeedCell()
                         .foregroundColor(.black)
                     // !! 북마크 클릭시 셀이 깜빡이는 현상
-                })
+                }).buttonStyle(PlainButtonStyle())
             }
         }
     }
