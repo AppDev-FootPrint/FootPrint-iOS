@@ -90,7 +90,7 @@ struct FeedCell: View {
                         .foregroundColor(.black)
                         .onTapGesture {
                             isClipped.toggle()
-                        }
+                    }
                 }
             }
             Spacer()

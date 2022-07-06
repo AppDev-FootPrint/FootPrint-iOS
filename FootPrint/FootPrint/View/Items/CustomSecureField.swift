@@ -14,7 +14,6 @@ struct CustomSecureField: View {
     var body: some View {
         
         VStack {
-            
             HStack {
                 Text(placeholder)
                     .font(.system(size: 18, weight: .semibold))

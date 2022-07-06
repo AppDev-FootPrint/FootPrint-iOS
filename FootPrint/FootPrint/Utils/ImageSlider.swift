@@ -26,7 +26,6 @@ struct ImageSlider: View {
 
 struct ImageSlider_Previews: PreviewProvider {
     static var previews: some View {
-        // 4
         ImageSlider()
             .previewLayout(.fixed(width: 400, height: 300))
     }

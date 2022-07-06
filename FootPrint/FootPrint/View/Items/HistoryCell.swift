@@ -13,7 +13,6 @@ struct HistoryCell: View {
     
     var body: some View {
         HStack {
-            
             Image(systemName: "magnifyingglass")
                 .resizable()
                 .scaledToFit()

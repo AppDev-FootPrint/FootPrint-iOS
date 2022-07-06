@@ -24,9 +24,6 @@ struct CreateDetailInfoView: View {
         VStack {
             
             HStack {
-                
-                // ?? needs left arrow ?
-                
                 Spacer()
                 
                 // default: 공개 게시글

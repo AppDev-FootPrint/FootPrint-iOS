@@ -54,8 +54,6 @@ struct SecuritySettingView: View {
                 }
             }
             
-            
-            
             HStack {
                 Spacer()
                 

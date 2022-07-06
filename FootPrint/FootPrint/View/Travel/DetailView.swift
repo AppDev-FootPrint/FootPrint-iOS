@@ -39,10 +39,8 @@ struct DetailView: View {
                 .padding(.top)
                 .padding(.bottom, 10)
                 
-                // !! 이미지 여러장 넘기는 액션 필요
                 ImageSlider()
                     .frame(height: 300)
-                
 
                 // acton buttons
                 HStack(spacing: 10) {

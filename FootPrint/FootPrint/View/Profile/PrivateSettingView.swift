@@ -16,7 +16,6 @@ struct PrivateSettingView: View {
     
     var body: some View {
         VStack {
-            
             // placeholder 변수가 private이면 매개인자로 사용불가하니까 없애도록! 
             CustomTextField(placeholder: "Email", text: $email)
             CustomTextField(placeholder: "Phone number", text: $phone)

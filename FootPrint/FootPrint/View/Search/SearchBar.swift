@@ -13,7 +13,6 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
-            
             if isEditing {
                 Button(action: {
                     isEditing = false
@@ -38,8 +37,7 @@ struct SearchBar: View {
                             .foregroundColor(.gray)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 8)
-                }
-            )
+                })
                 .onTapGesture {
                     isEditing = true
                 }

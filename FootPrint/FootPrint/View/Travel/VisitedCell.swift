@@ -13,7 +13,6 @@ struct VisitedCell: View {
     @State private var locName : String = "담배가게"
     @State private var locAddr : String = "대전 서구 송리단길 12번길 15"
     @State private var locComment : String = "담배가 정말 맛있었던 곳"
-    
     @State private var photo: String = "photo"
     
     var body: some View {

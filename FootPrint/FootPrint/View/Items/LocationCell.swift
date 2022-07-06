@@ -14,7 +14,6 @@ struct LocationCell: View {
     
     var body: some View {
         HStack {
-            // image
             Image(systemName: "mappin.and.ellipse")
                 .resizable()
                 .scaledToFit()
