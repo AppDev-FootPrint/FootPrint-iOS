@@ -15,15 +15,15 @@ struct SearchBar: View {
         HStack {
             if isEditing {
                 Button(action: {
+                    withAnimation(.default) {
                     isEditing = false
                     text = ""
                     UIApplication.shared.endEditing()
-                }, label: {
+                }}, label: {
                     Image(systemName: "arrow.backward")
                         .foregroundColor(.black)
                 })
-                    .transition(.move(edge: .leading)) //
-                    .animation(.default)
+                    .transition(.move(edge: .leading))
             }
             
             TextField("Search..", text: $text)
