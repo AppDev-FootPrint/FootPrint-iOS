@@ -17,10 +17,14 @@ struct PrivateSettingView: View {
     var body: some View {
         VStack {
             // placeholder 변수가 private이면 매개인자로 사용불가하니까 없애도록! 
-            CustomTextField(placeholder: "Email", text: $email)
-            CustomTextField(placeholder: "Phone number", text: $phone)
-            CustomTextField(placeholder: "Gender", text: $gender)
-            CustomTextField(placeholder: "Birthday", text: $birth)
+//            CustomTextField(placeholder: "Email", text: $email)
+//            CustomTextField(placeholder: "Phone number", text: $phone)
+//            CustomTextField(placeholder: "Gender", text: $gender)
+//            CustomTextField(placeholder: "Birthday", text: $birth)
+            CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
+            CustomTextField(text: $phone, placeholder: Text("Phone number"), imageName: "phone")
+            CustomTextField(text: $gender, placeholder: Text("Gender"), imageName: "person.text.rectangle")
+            CustomTextField(text: $birth, placeholder: Text("Birthday"), imageName: "gift")
             
             HStack {
                 Spacer()

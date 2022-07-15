@@ -15,9 +15,9 @@ struct SecuritySettingView: View {
     
     var body: some View {
         VStack {
-            CustomSecureField(placeholder: "Current Password", text: $currentPW)
+            CustomSecureField(placeholder: Text("Current Password"), text: $currentPW)
                 .padding(.top)
-            CustomSecureField(placeholder: "New Password", text: $newPW)
+            CustomSecureField(placeholder: Text("New Password"), text: $newPW)
             
             HStack {
                 Text("Confirm Password")

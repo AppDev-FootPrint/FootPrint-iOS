@@ -9,23 +9,27 @@ import SwiftUI
 
 struct CustomTextField: View {
     
-    var placeholder : String
     @Binding var text: String
+    let placeholder: Text
+    let imageName: String
     
     var body: some View {
-        
-        VStack {
-            HStack {
-                Text(placeholder)
-                    .font(.system(size: 18, weight: .semibold))
-                    .padding([.leading, .trailing])
-                Spacer()
+        ZStack(alignment: .leading) {
+            if text.isEmpty {
+                placeholder
+                    .padding(.leading, 40)
+                    .foregroundColor(.gray)
             }
             
-            TextField("\(placeholder)...", text: $text)
-                .padding()
-                .border(.black, width:2)
-                .padding([.leading, .trailing, .bottom])
+            HStack {
+                Image(systemName: imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                
+                TextField("", text: $text)
+                    .disableAutocorrection(true)
+            }
         }
     }
 }

@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct CustomSecureField: View {
-    var placeholder : String
+    let placeholder: Text
     @Binding var text: String
     
     var body: some View {
-        
-        VStack {
-            HStack {
-                Text(placeholder)
-                    .font(.system(size: 18, weight: .semibold))
-                    .padding([.leading, .trailing])
-                Spacer()
+        ZStack(alignment: .leading) {
+            if text.isEmpty {
+                placeholder
+                    .padding(.leading, 40)
+                    .foregroundColor(.gray)
             }
             
-            SecureField("\(placeholder)...", text: $text)
-                .padding()
-                .border(.black, width:2)
-                .padding([.leading, .trailing, .bottom])
+            HStack {
+                Image(systemName: "lock")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                
+                SecureField("", text: $text)
+            }
         }
     }
 }
