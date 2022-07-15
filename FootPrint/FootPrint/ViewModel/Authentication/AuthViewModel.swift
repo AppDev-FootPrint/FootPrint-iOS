@@ -47,7 +47,7 @@ class AuthViewModel: ObservableObject {
                     let user = try JSONDecoder().decode(User.self, from: json)
                     
                     print("✅ DEBUG: \(user.username) \(user.nickname)")
-                    self.userSession = User(id: user.id, username: user.username, password: user.password, nickname: user.nickname)
+                    self.userSession = User(username: user.username, password: user.password, nickname: user.nickname)
                     self.fetchUser()
                 } catch (let error ) {
                     print("🚫 DEBUG: \(error.localizedDescription)")
@@ -85,7 +85,7 @@ class AuthViewModel: ObservableObject {
                     let user = try JSONDecoder().decode(User.self, from: json)
                     
                     print("✅ DEBUG: \(user.username) \(user.nickname)")
-                    self.userSession = User(id: user.id, username: user.username, password: user.password, nickname: user.nickname)
+                    self.userSession = User(username: user.username, password: user.password, nickname: user.nickname)
                     self.fetchUser()
                 } catch (let error ) {
                     print("🚫 DEBUG: \(error.localizedDescription)")
@@ -101,7 +101,7 @@ class AuthViewModel: ObservableObject {
     }
 
     func fetchUser() {
-        guard let uid = userSession?.id else { return }
-        print("DEBUG: uid \(uid)")
+//        guard let uid = userSession?.id else { return }
+//        print("DEBUG: uid \(uid)")
     }
 }
