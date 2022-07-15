@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		BF3904B228756629008C27F7 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3904B128756629008C27F7 /* ImageSlider.swift */; };
 		BF3904B42875736C008C27F7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3904B32875736C008C27F7 /* Storage.swift */; };
+		BF3DCDD6287EEDA500BED9D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BF3DCDD5287EEDA500BED9D7 /* Alamofire */; };
+		BF3DCDD9287EF02B00BED9D7 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = BF3DCDD8287EF02B00BED9D7 /* JWTDecode */; };
+		BF3DCDDC287EF1EE00BED9D7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCDDB287EF1EE00BED9D7 /* LoginView.swift */; };
+		BF3DCDDE287EF21F00BED9D7 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCDDD287EF21F00BED9D7 /* RegistrationView.swift */; };
 		BF4AF32F2875B23200FDC3C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AF32E2875B23200FDC3C6 /* User.swift */; };
 		BF4AF3322875B2C600FDC3C6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BF4AF3312875B2C600FDC3C6 /* Alamofire */; };
 		BF4AF3352875B31800FDC3C6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AF3342875B31800FDC3C6 /* AuthViewModel.swift */; };
@@ -52,6 +56,8 @@
 /* Begin PBXFileReference section */
 		BF3904B128756629008C27F7 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
 		BF3904B32875736C008C27F7 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		BF3DCDDB287EF1EE00BED9D7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BF3DCDDD287EF21F00BED9D7 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		BF4AF32E2875B23200FDC3C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF4AF3342875B31800FDC3C6 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BF5224312823C51700674695 /* VisitedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCell.swift; sourceTree = "<group>"; };
@@ -98,18 +104,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4AF3322875B2C600FDC3C6 /* Alamofire in Frameworks */,
+				BF3DCDD6287EEDA500BED9D7 /* Alamofire in Frameworks */,
+				BF3DCDD9287EF02B00BED9D7 /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF4AF3332875B2FF00FDC3C6 /* Authentification */ = {
+		BF3DCDDA287EF1E100BED9D7 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BF3DCDDB287EF1EE00BED9D7 /* LoginView.swift */,
+				BF3DCDDD287EF21F00BED9D7 /* RegistrationView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BF4AF3332875B2FF00FDC3C6 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				BF4AF3342875B31800FDC3C6 /* AuthViewModel.swift */,
 			);
-			path = Authentification;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		BF9C2B63282B99C4007E6543 /* Feed */ = {
@@ -181,7 +198,7 @@
 		BFC252DE2819728A00E7EDDA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				BF4AF3332875B2FF00FDC3C6 /* Authentification */,
+				BF4AF3332875B2FF00FDC3C6 /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,6 +206,7 @@
 		BFC252DF2819729100E7EDDA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF3DCDDA287EF1E100BED9D7 /* Authentication */,
 				BF9C2B63282B99C4007E6543 /* Feed */,
 				BFFE6F07281E9E34001B309C /* Items */,
 				BFFE6F02281E98B9001B309C /* Profile */,
@@ -296,6 +314,8 @@
 			name = FootPrint;
 			packageProductDependencies = (
 				BF4AF3312875B2C600FDC3C6 /* Alamofire */,
+				BF3DCDD5287EEDA500BED9D7 /* Alamofire */,
+				BF3DCDD8287EF02B00BED9D7 /* JWTDecode */,
 			);
 			productName = FootPrint;
 			productReference = BFC252CB2819722C00E7EDDA /* FootPrint.app */;
@@ -327,6 +347,8 @@
 			mainGroup = BFC252C22819722C00E7EDDA;
 			packageReferences = (
 				BF4AF3302875B2C600FDC3C6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BF3DCDD4287EEDA500BED9D7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BF3DCDD7287EF02B00BED9D7 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
 			);
 			productRefGroup = BFC252CC2819722C00E7EDDA /* Products */;
 			projectDirPath = "";
@@ -357,6 +379,7 @@
 				BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */,
 				BFC37CA728378DFC00640CEA /* NotificationCell.swift in Sources */,
 				BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */,
+				BF3DCDDE287EF21F00BED9D7 /* RegistrationView.swift in Sources */,
 				BF5224342823D85200674695 /* ImagePicker.swift in Sources */,
 				BF7DA9472828F19B008FE410 /* PrivateSettingView.swift in Sources */,
 				BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */,
@@ -370,6 +393,7 @@
 				BFFE6F26281FFCFA001B309C /* CategoryButton.swift in Sources */,
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
+				BF3DCDDC287EF1EE00BED9D7 /* LoginView.swift in Sources */,
 				BFFE6F12281EDADC001B309C /* SearchListView.swift in Sources */,
 				BF9C2B69282C136F007E6543 /* DetailView.swift in Sources */,
 				BFFE6F24281FF429001B309C /* TravelView.swift in Sources */,
@@ -595,6 +619,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF3DCDD4287EEDA500BED9D7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+		BF3DCDD7287EF02B00BED9D7 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
 		BF4AF3302875B2C600FDC3C6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -606,6 +646,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF3DCDD5287EEDA500BED9D7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF4AF3302875B2C600FDC3C6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		BF3DCDD8287EF02B00BED9D7 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF3DCDD7287EF02B00BED9D7 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;
+			productName = JWTDecode;
+		};
 		BF4AF3312875B2C600FDC3C6 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF4AF3302875B2C600FDC3C6 /* XCRemoteSwiftPackageReference "Alamofire" */;
