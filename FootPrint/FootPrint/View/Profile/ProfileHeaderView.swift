@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
+    
+    @ObservedObject var viewModel: ProfileViewModel
+    
     var body: some View {
         VStack {
             HStack{
@@ -29,23 +32,21 @@ struct ProfileHeaderView: View {
                 .padding(.trailing)
             }
             
-            VStack (alignment: .leading) {
-                Text("username")
-                    .font(.system(size: 15, weight: .semibold))
-                    .padding(.top)
-                    .padding(.leading, 10)
+            VStack {
+                HStack {
+                    Text("\(viewModel.user.username)")
+                        .font(.system(size: 15, weight: .semibold))
+                        .padding(.leading, 25)
+                        .padding(.bottom, 5)
+                    
+                    Spacer()
+                }
                     
                 Text("요기는 자기소개란입니당 자기소개랑 자기소개랑 자기소개 자기소개랑 자기소개랑 자기소개 자기소개랑 자기소개랑 자기소개")
                     .font(.system(size: 15))
-                    .padding([.top,.leading, .trailing],5)
+                    .padding([.leading, .trailing], 5)
             }
             ProfileActionButtonView()
         }
-    }
-}
-
-struct ProfileHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderView()
     }
 }

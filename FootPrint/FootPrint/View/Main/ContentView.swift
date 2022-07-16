@@ -17,9 +17,9 @@ struct ContentView: View {
                 LoginView()
             }
             else {
-//                if let user = viewModel.currentUser {
-                    MainTabView()
-//                }
+                if let user = viewModel.userSession {
+                    MainTabView(user: user)
+                }
             }
         }
     }

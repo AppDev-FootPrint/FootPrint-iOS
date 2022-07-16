@@ -12,14 +12,8 @@ import JWTDecode
 class AuthViewModel: ObservableObject {
     
     @Published var userSession: User?
-    @Published var currentUser: User?
     
     static let shared = AuthViewModel()
-    
-    init() {
-        userSession = self.currentUser
-        fetchUser()
-    }
     
     func register(username: String, password: String, nickname: String) {
         let url = "\(Storage().SERVER_URL)/signUp"
@@ -88,10 +82,5 @@ class AuthViewModel: ObservableObject {
     
     func signout() {
         self.userSession = nil
-    }
-
-    func fetchUser() {
-        guard let uid = userSession?.id else { return }
-        print("DEBUG fetchUser(): uid \(uid)")
     }
 }

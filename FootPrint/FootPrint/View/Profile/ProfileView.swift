@@ -9,20 +9,21 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State private var username : String = "username"
+    let user: User
+    @ObservedObject var viewModel : ProfileViewModel
+    
+    init(user: User) {
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
+    
     var body: some View {
             ScrollView {
                 VStack {
-                    ProfileHeaderView()
+                    ProfileHeaderView(viewModel: viewModel)
                     FeedGridView()
                     Spacer()
                 }
         }
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
     }
 }

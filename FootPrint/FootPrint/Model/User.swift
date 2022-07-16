@@ -13,4 +13,6 @@ struct User: Identifiable, Codable {
     var nickname: String?
     
     var accessToken: String?
+    
+    var bio: String?
 }
