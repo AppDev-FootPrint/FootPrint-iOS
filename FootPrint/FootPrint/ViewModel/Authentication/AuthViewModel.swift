@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Alamofire
+import JWTDecode
 
 class AuthViewModel: ObservableObject {
     
@@ -40,25 +41,16 @@ class AuthViewModel: ObservableObject {
         }
         
         AF.request(request).responseString { (response) in
-            switch response.result {
-            case .success (let userInfo):
-                let json = userInfo.data(using: .utf8)!
-                do {
-                    let user = try JSONDecoder().decode(User.self, from: json)
-                    
-                    print("✅ DEBUG: \(user.username) \(user.nickname)")
-                    self.userSession = User(username: user.username, password: user.password, nickname: user.nickname)
-                    self.fetchUser()
-                } catch (let error ) {
-                    print("🚫 DEBUG: \(error.localizedDescription)")
-                }
-            case .failure(let error):
-                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+            print("DEBUG on register() : \(response.response)")
+            if response.response?.statusCode == 201 { // Created
+                print("DEBUG on register() : ✅ success to register")
+            } else {
+                print("DEBUG on register() : ❌ fail to register")
             }
         }
     }
     
-    func login(username: String, password: String, nickname: String) {
+    func login(username: String, password: String) {
         let url = "\(Storage().SERVER_URL)/login"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
@@ -67,8 +59,8 @@ class AuthViewModel: ObservableObject {
         
         // POST 로 보낼 정보
         let params = ["username": username,
-                      "password": password,
-                      "nickname": nickname] as Dictionary
+                      "password": password] as Dictionary
+        print("DEBUG on login() : \(params)")
 
         // httpBody 에 parameters 추가
         do {
@@ -78,20 +70,18 @@ class AuthViewModel: ObservableObject {
         }
         
         AF.request(request).responseString { (response) in
-            switch response.result {
-            case .success (let userInfo):
-                let json = userInfo.data(using: .utf8)!
+            print("DEBUG on login() : \(response.response)")
+            if response.response?.statusCode == 200 { // OK
+                guard let accessToken = response.response?.allHeaderFields["Authorization"] else { return }
+                
+                self.userSession = User(username: username, password: password)
+                self.userSession?.accessToken = "\(accessToken)"
                 do {
-                    let user = try JSONDecoder().decode(User.self, from: json)
-                    
-                    print("✅ DEBUG: \(user.username) \(user.nickname)")
-                    self.userSession = User(username: user.username, password: user.password, nickname: user.nickname)
-                    self.fetchUser()
-                } catch (let error ) {
-                    print("🚫 DEBUG: \(error.localizedDescription)")
+                    let jwt = try decode(jwt: "\(accessToken)")
+                    self.userSession?.id = jwt.body["memberId"] as? Int
+                } catch {
+                    print("catch")
                 }
-            case .failure(let error):
-                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
             }
         }
     }
@@ -101,7 +91,7 @@ class AuthViewModel: ObservableObject {
     }
 
     func fetchUser() {
-//        guard let uid = userSession?.id else { return }
-//        print("DEBUG: uid \(uid)")
+        guard let uid = userSession?.id else { return }
+        print("DEBUG fetchUser(): uid \(uid)")
     }
 }

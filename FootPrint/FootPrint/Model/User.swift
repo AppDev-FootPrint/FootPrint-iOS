@@ -6,8 +6,11 @@
 //
 import SwiftUI
 
-struct User: Codable {
+struct User: Identifiable, Codable {
+    var id: Int?
     var username: String
     var password: String
-    var nickname: String
+    var nickname: String?
+    
+    var accessToken: String?
 }

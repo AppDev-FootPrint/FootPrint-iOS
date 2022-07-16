@@ -38,6 +38,8 @@ struct MainTabView: View {
                     }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: logoutButton)
+            .accentColor(.black)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Image("logo")
@@ -47,6 +49,14 @@ struct MainTabView: View {
             }
         }
     }
+    var logoutButton: some View {
+        Button {
+            AuthViewModel.shared.signout()
+        } label : {
+            Text("Logout").foregroundColor(.black)
+        }
+    }
+
 }
 
 struct MainTabView_Previews: PreviewProvider {
