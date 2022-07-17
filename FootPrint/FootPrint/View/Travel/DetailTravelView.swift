@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DetailTravelView: View {
     
     @State var locName: String = "담배가게"
     @State var comment : String = "담배가 정말 맛있었던 곳"
@@ -134,8 +134,8 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
+struct DetailTravelView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailTravelView()
     }
 }

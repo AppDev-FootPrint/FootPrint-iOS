@@ -11,7 +11,7 @@ struct FeedView: View {
     var body: some View {
         ScrollView {
             ForEach (0..<10) { _ in
-                NavigationLink (destination: TravelView(), label: {
+                NavigationLink (destination: MainTravelView(), label: {
                     FeedCell()
                         .foregroundColor(.black)
                 }).buttonStyle(PlainButtonStyle())

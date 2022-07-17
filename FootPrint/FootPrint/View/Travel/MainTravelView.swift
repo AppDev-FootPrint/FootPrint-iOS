@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct TravelView: View {
+struct MainTravelView: View {
     
     @State private var travelTitle: String = "TRAVEL TITLE"
     
@@ -47,13 +47,13 @@ struct TravelView: View {
             
             ScrollView {
                 ForEach (0..<3) { _ in
-                    NavigationLink (destination: DetailView(), label: {
+                    NavigationLink (destination: DetailTravelView(), label: {
                         VisitedCell()
                             .foregroundColor(.black)
                     })
                 }
                 
-                NavigationLink(destination: CreateDetailInfoView(numberOfPriceInfo: 0, numberOfTipInfo: 0), label: {
+                NavigationLink(destination: CreateDetailTravelView(numberOfPriceInfo: 0, numberOfTipInfo: 0), label: {
                     Image(systemName: "plus")
                         .foregroundColor(.white)
                         .padding()
@@ -65,8 +65,8 @@ struct TravelView: View {
     }
 }
 
-struct TravelView_Previews: PreviewProvider {
+struct MainTravelView_Previews: PreviewProvider {
     static var previews: some View {
-        TravelView()
+        MainTravelView()
     }
 }

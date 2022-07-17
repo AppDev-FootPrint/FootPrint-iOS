@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateDetailInfoView: View {
+struct CreateDetailTravelView: View {
     
     @State private var searchKeyword: String = ""
     @State private var comment: String = ""
@@ -195,7 +195,7 @@ struct CreateDetailInfoView: View {
 }
 
 
-extension CreateDetailInfoView {
+extension CreateDetailTravelView {
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         image = Image(uiImage: selectedImage)
@@ -203,8 +203,8 @@ extension CreateDetailInfoView {
 }
 
 
-struct CreateDetailInfoView_Previews: PreviewProvider {
+struct CreateDetailTravelView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateDetailInfoView(numberOfPriceInfo: 0, numberOfTipInfo: 1)
+        CreateDetailTravelView(numberOfPriceInfo: 0, numberOfTipInfo: 1)
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateTravelView: View {
+struct CreateMainTravelView: View {
     
     @State private var date = Date()
     @State var title: String = ""
@@ -45,7 +45,7 @@ struct CreateTravelView: View {
                 })
                 
                 // 새 여행 피드가 생성된 프로필 뷰로 전환
-                NavigationLink(destination: TravelView(), label: {
+                NavigationLink(destination: MainTravelView(), label: {
                     Text("Apply")
                         .foregroundColor(.white)
                         .padding(7)
@@ -60,8 +60,8 @@ struct CreateTravelView: View {
     }
 }
 
-struct CreateTravelView_Previews: PreviewProvider {
+struct CreateMainTravelView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTravelView()
+        CreateMainTravelView()
     }
 }

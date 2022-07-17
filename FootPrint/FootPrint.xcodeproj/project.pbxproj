@@ -24,7 +24,7 @@
 		BF9C2B62282A6E81007E6543 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */; };
 		BF9C2B65282B99CF007E6543 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B64282B99CF007E6543 /* FeedView.swift */; };
 		BF9C2B67282BAF16007E6543 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B66282BAF16007E6543 /* FeedCell.swift */; };
-		BF9C2B69282C136F007E6543 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B68282C136F007E6543 /* DetailView.swift */; };
+		BF9C2B69282C136F007E6543 /* DetailTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B68282C136F007E6543 /* DetailTravelView.swift */; };
 		BF9E9C3C288333C40012A9D1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C3B288333C40012A9D1 /* ProfileViewModel.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
@@ -35,7 +35,7 @@
 		BFFE6EF5281E97DC001B309C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EF4281E97DC001B309C /* MainTabView.swift */; };
 		BFFE6EFA281E982D001B309C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EF9281E982D001B309C /* NotificationView.swift */; };
 		BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6EFE281E987A001B309C /* SearchView.swift */; };
-		BFFE6F01281E9894001B309C /* CreateTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F00281E9894001B309C /* CreateTravelView.swift */; };
+		BFFE6F01281E9894001B309C /* CreateMainTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F00281E9894001B309C /* CreateMainTravelView.swift */; };
 		BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F03281E98C3001B309C /* ProfileView.swift */; };
 		BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F05281E9E13001B309C /* ProfileHeaderView.swift */; };
 		BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F09281E9E4F001B309C /* FeedGridView.swift */; };
@@ -49,8 +49,8 @@
 		BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1B281EDCA2001B309C /* LocationCell.swift */; };
 		BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1D281EE63C001B309C /* HistoryCell.swift */; };
 		BFFE6F20281FF35B001B309C /* EditTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F1F281FF35B001B309C /* EditTravelView.swift */; };
-		BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */; };
-		BFFE6F24281FF429001B309C /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F23281FF429001B309C /* TravelView.swift */; };
+		BFFE6F22281FF370001B309C /* CreateDetailTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F21281FF370001B309C /* CreateDetailTravelView.swift */; };
+		BFFE6F24281FF429001B309C /* MainTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F23281FF429001B309C /* MainTravelView.swift */; };
 		BFFE6F26281FFCFA001B309C /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE6F25281FFCFA001B309C /* CategoryButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,7 @@
 		BF9C2B61282A6E81007E6543 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		BF9C2B64282B99CF007E6543 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		BF9C2B66282BAF16007E6543 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		BF9C2B68282C136F007E6543 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BF9C2B68282C136F007E6543 /* DetailTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravelView.swift; sourceTree = "<group>"; };
 		BF9E9C3B288333C40012A9D1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		BFFE6EF4281E97DC001B309C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BFFE6EF9281E982D001B309C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		BFFE6EFE281E987A001B309C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		BFFE6F00281E9894001B309C /* CreateTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelView.swift; sourceTree = "<group>"; };
+		BFFE6F00281E9894001B309C /* CreateMainTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMainTravelView.swift; sourceTree = "<group>"; };
 		BFFE6F03281E98C3001B309C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BFFE6F05281E9E13001B309C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		BFFE6F09281E9E4F001B309C /* FeedGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGridView.swift; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 		BFFE6F1B281EDCA2001B309C /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		BFFE6F1D281EE63C001B309C /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		BFFE6F1F281FF35B001B309C /* EditTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravelView.swift; sourceTree = "<group>"; };
-		BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDetailInfoView.swift; sourceTree = "<group>"; };
-		BFFE6F23281FF429001B309C /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
+		BFFE6F21281FF370001B309C /* CreateDetailTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDetailTravelView.swift; sourceTree = "<group>"; };
+		BFFE6F23281FF429001B309C /* MainTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTravelView.swift; sourceTree = "<group>"; };
 		BFFE6F25281FFCFA001B309C /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,13 +258,13 @@
 		BFFE6EF1281E971B001B309C /* Travel */ = {
 			isa = PBXGroup;
 			children = (
-				BFFE6F00281E9894001B309C /* CreateTravelView.swift */,
-				BFFE6F23281FF429001B309C /* TravelView.swift */,
-				BF9C2B68282C136F007E6543 /* DetailView.swift */,
+				BFFE6F00281E9894001B309C /* CreateMainTravelView.swift */,
+				BFFE6F23281FF429001B309C /* MainTravelView.swift */,
+				BF9C2B68282C136F007E6543 /* DetailTravelView.swift */,
 				BF5224312823C51700674695 /* VisitedCell.swift */,
 				BFF60D742833D46500EBC809 /* PriceCell.swift */,
 				BFFE6F1F281FF35B001B309C /* EditTravelView.swift */,
-				BFFE6F21281FF370001B309C /* CreateDetailInfoView.swift */,
+				BFFE6F21281FF370001B309C /* CreateDetailTravelView.swift */,
 				BFFE6F25281FFCFA001B309C /* CategoryButton.swift */,
 			);
 			path = Travel;
@@ -407,8 +407,8 @@
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
 				BF3DCDDC287EF1EE00BED9D7 /* LoginView.swift in Sources */,
 				BFFE6F12281EDADC001B309C /* SearchListView.swift in Sources */,
-				BF9C2B69282C136F007E6543 /* DetailView.swift in Sources */,
-				BFFE6F24281FF429001B309C /* TravelView.swift in Sources */,
+				BF9C2B69282C136F007E6543 /* DetailTravelView.swift in Sources */,
+				BFFE6F24281FF429001B309C /* MainTravelView.swift in Sources */,
 				BF5224322823C51700674695 /* VisitedCell.swift in Sources */,
 				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,
 				BFFE6F20281FF35B001B309C /* EditTravelView.swift in Sources */,
@@ -417,11 +417,11 @@
 				BF9C2B65282B99CF007E6543 /* FeedView.swift in Sources */,
 				BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */,
 				BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */,
-				BFFE6F01281E9894001B309C /* CreateTravelView.swift in Sources */,
+				BFFE6F01281E9894001B309C /* CreateMainTravelView.swift in Sources */,
 				BF3904B228756629008C27F7 /* ImageSlider.swift in Sources */,
 				BF3904B42875736C008C27F7 /* Storage.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
-				BFFE6F22281FF370001B309C /* CreateDetailInfoView.swift in Sources */,
+				BFFE6F22281FF370001B309C /* CreateDetailTravelView.swift in Sources */,
 				BF4AF32F2875B23200FDC3C6 /* User.swift in Sources */,
 				BFF60D752833D46500EBC809 /* PriceCell.swift in Sources */,
 				BFFE6EFF281E987A001B309C /* SearchView.swift in Sources */,

@@ -22,7 +22,7 @@ struct MainTabView: View {
                         Image(systemName: "magnifyingglass")
                     }
                 
-                CreateTravelView()
+                CreateMainTravelView()
                     .tabItem {
                         Image(systemName: "plus.square")
                     }
