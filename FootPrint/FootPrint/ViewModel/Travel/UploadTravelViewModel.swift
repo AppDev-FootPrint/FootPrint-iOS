@@ -11,6 +11,11 @@ import Alamofire
 class UploadTravelViewModel: ObservableObject {
     
     @Published var created = false
+    private var travel: MainTravel
+    
+    init() {
+        self.travel = MainTravel(likeNum: 0)
+    }
     
     func createMainTravel(title: String, startDate: String, endDate: String, isVisible: Bool, isCompleted: Bool, mainImagePath: String) {
         guard let user = AuthViewModel.shared.userSession else { return }
@@ -44,14 +49,50 @@ class UploadTravelViewModel: ObservableObject {
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on createMainTravel() : ✅ success to create main travel")
                 self.created = true
+                self.travel = MainTravel(title: title, startDate: startDate, endDate: endDate, isVisible: isVisible, isCompleted: isCompleted, mainImagePath: mainImagePath, createDetailTravelRequest: [], likeNum: 0)
                 switch response.result {
                 case .success(let id):
-                    print("✅ DEBUG createMainTravel(): travel ID is \(id)")
+                    self.travel.id = Int(id)
+                    print("✅ DEBUG createMainTravel(): travel info \(self.travel)")
                 case .failure(let error):
                     print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 }
             } else {
                 print("DEBUG on createMainTravel() : 🚫 fail to create main travel")
+            }
+        }
+    }
+    
+    func modifyTravel(travelId: Int, title: String, startDate: String, endDate: String, isVisible: Bool, isCompleted: Bool, mainImagePath: String) {
+        guard let user = AuthViewModel.shared.userSession else { return }
+        
+        let url = "\(Storage().SERVER_URL)/api/main-travels/\(travelId)"
+        let params: Parameters = ["title": title,
+                                  "startDate": startDate,
+                                  "endDate": endDate,
+                                  "isVisible": isVisible,
+                                  "isCompleted": isCompleted,
+                                  "mainImagePath": mainImagePath,
+                                  "createDetailTravelRequest": []] as Dictionary
+        
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("\(user.accessToken ?? "no_permission")", forHTTPHeaderField: "Authorization")
+        
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+        
+        AF.request(request)
+            .validate(statusCode: 200..<300)
+            .responseString { (response) in
+                if response.response?.statusCode == 200 {
+                    print("✅ DEBUG on modifyTravel(): \(response.result)")
+                } else {
+                    print("🚫 DEBUG on modifyTravel(): \(response.result)")
             }
         }
     }

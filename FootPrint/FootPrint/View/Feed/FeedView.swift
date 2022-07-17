@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FeedView: View {
+    
+    @ObservedObject var viewModel = FeedViewModel()
+    
     var body: some View {
         ScrollView {
             ForEach (0..<10) { _ in

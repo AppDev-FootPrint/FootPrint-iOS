@@ -31,6 +31,8 @@
 		BF9E9C432883D1A90012A9D1 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C422883D1A90012A9D1 /* DateConverter.swift */; };
 		BF9E9C4E2883DA4C0012A9D1 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = BF9E9C4D2883DA4C0012A9D1 /* PopupView */; };
 		BF9E9C502883EA3F0012A9D1 /* MainTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */; };
+		BF9E9C532883EE0F0012A9D1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C522883EE0F0012A9D1 /* FeedViewModel.swift */; };
+		BF9E9C552883EE250012A9D1 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C542883EE250012A9D1 /* FeedCellViewModel.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 		BF9E9C402883CF040012A9D1 /* DetailTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravel.swift; sourceTree = "<group>"; };
 		BF9E9C422883D1A90012A9D1 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTravel.swift; sourceTree = "<group>"; };
+		BF9E9C522883EE0F0012A9D1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		BF9E9C542883EE250012A9D1 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 			path = Travel;
 			sourceTree = "<group>";
 		};
+		BF9E9C512883EE010012A9D1 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				BF9E9C522883EE0F0012A9D1 /* FeedViewModel.swift */,
+				BF9E9C542883EE250012A9D1 /* FeedCellViewModel.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		BFC252C22819722C00E7EDDA = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 		BFC252DE2819728A00E7EDDA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BF9E9C512883EE010012A9D1 /* Feed */,
 				BF9E9C3D2883CCE40012A9D1 /* Travel */,
 				BF9E9C3A288333B30012A9D1 /* Profile */,
 				BF4AF3332875B2FF00FDC3C6 /* Authentication */,
@@ -434,6 +448,7 @@
 				BF3DCDDC287EF1EE00BED9D7 /* LoginView.swift in Sources */,
 				BFFE6F12281EDADC001B309C /* SearchListView.swift in Sources */,
 				BF9C2B69282C136F007E6543 /* DetailTravelView.swift in Sources */,
+				BF9E9C552883EE250012A9D1 /* FeedCellViewModel.swift in Sources */,
 				BFFE6F24281FF429001B309C /* MainTravelView.swift in Sources */,
 				BF5224322823C51700674695 /* VisitedCell.swift in Sources */,
 				BF9E9C502883EA3F0012A9D1 /* MainTravel.swift in Sources */,
@@ -445,6 +460,7 @@
 				BFFE6F0A281E9E4F001B309C /* FeedGridView.swift in Sources */,
 				BFFE6F18281EDB76001B309C /* Extensions.swift in Sources */,
 				BFFE6F01281E9894001B309C /* CreateMainTravelView.swift in Sources */,
+				BF9E9C532883EE0F0012A9D1 /* FeedViewModel.swift in Sources */,
 				BF3904B228756629008C27F7 /* ImageSlider.swift in Sources */,
 				BF3904B42875736C008C27F7 /* Storage.swift in Sources */,
 				BFFE6F0C281E9ED0001B309C /* UserStatView.swift in Sources */,
