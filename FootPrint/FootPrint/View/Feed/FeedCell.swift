@@ -42,7 +42,7 @@ struct FeedCell: View {
                     Text("\(viewModel.travel.writerInfo?.username ?? "username")")
                 }
                 
-                Text("\(viewModel.travel.title ?? "no_title")")
+                Text("\(viewModel.travel.title ?? "no_name")")
                     .padding(.top, 10)
                     .padding(.bottom, 30)
                 

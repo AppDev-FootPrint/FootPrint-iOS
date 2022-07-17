@@ -11,11 +11,11 @@ import SwiftUI
 struct MainTravelView: View {
     
     @State private var travelTitle: String = "TRAVEL TITLE"
-    
     @State private var userState : Bool = true // 로그인한 계정의 travel이라면 true
     @State private var clipped: Bool = true // 여행을 따로 저장? 디폴트는 false (저장하지 않은 상태)
     
     @ObservedObject var viewModel : MainTravelViewModel
+    @Environment(\.presentationMode) var mode
     
     var body: some View {
         VStack {
@@ -38,7 +38,10 @@ struct MainTravelView: View {
                             Label("Modify", systemImage: "pencil")
                         })
 
-                        Button(action: {}, label: {
+                        Button(action: {
+                            guard let travelId = viewModel.travel.id else { return }
+                            viewModel.deleteMainTravel(travelId: travelId)
+                        }, label: {
                             Label("Delete", systemImage: "delete.left")
                         })
                     }, label: {
@@ -75,5 +78,10 @@ struct MainTravelView: View {
                 })
             }
         }
+        .onReceive(viewModel.$deleted, perform: { completed in
+            if completed {
+                self.mode.wrappedValue.dismiss()
+            }
+        })
     }
 }

@@ -11,6 +11,7 @@ import Alamofire
 class MainTravelViewModel: ObservableObject {
     
     @Published var created = false
+    @Published var deleted = false
     @Published var travel: MainTravel
     
     init(travel: MainTravel) {
@@ -112,6 +113,7 @@ class MainTravelViewModel: ObservableObject {
             .responseString { (response) in
                 if response.response?.statusCode == 200 {
                     print("✅ DEBUG on deleteMainTravel(): success to delete!\n \(response.result)")
+                    self.deleted = true
                 } else {
                     print("🚫 DEBUG on deleteMainTravel(): \(response.result)")
             }
