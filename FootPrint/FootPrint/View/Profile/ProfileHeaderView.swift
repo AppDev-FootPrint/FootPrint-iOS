@@ -32,7 +32,7 @@ struct ProfileHeaderView: View {
                 .padding(.trailing)
             }
             
-            VStack {
+            VStack(alignment: .leading){
                 HStack {
                     Text("\(viewModel.user.username)")
                         .font(.system(size: 15, weight: .semibold))
@@ -41,10 +41,10 @@ struct ProfileHeaderView: View {
                     
                     Spacer()
                 }
-                    
-                Text("요기는 자기소개란입니당 자기소개랑 자기소개랑 자기소개 자기소개랑 자기소개랑 자기소개 자기소개랑 자기소개랑 자기소개")
+                Text("요기는 자기소개란입니당")
                     .font(.system(size: 15))
-                    .padding([.leading, .trailing], 5)
+                    .padding(.leading, 25)
+                    .multilineTextAlignment(.leading)
             }
             ProfileActionButtonView()
         }
