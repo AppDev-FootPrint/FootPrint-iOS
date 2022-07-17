@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailTravel {
+struct DetailTravel: Decodable {
     var title: String
     var review: String
     var tip: String
@@ -20,11 +20,11 @@ struct DetailTravel {
     var createImageRequestList: [ImageRequest]
 }
 
-struct PriceRequest {
+struct PriceRequest: Decodable {
     var item: String
     var priceInfo: Int
 }
 
-struct ImageRequest {
+struct ImageRequest: Decodable {
     var path: String
 }

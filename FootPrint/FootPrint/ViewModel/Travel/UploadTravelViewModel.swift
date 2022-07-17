@@ -32,7 +32,6 @@ class UploadTravelViewModel: ObservableObject {
                       "mainImagePath": mainImagePath,
                       "createDetailTravelRequest": []] as Dictionary
 
-        print(params)
         // httpBody 에 parameters 추가
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
@@ -45,6 +44,12 @@ class UploadTravelViewModel: ObservableObject {
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on createMainTravel() : ✅ success to create main travel")
                 self.created = true
+                switch response.result {
+                case .success(let id):
+                    print("✅ DEBUG createMainTravel(): travel ID is \(id)")
+                case .failure(let error):
+                    print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+                }
             } else {
                 print("DEBUG on createMainTravel() : 🚫 fail to create main travel")
             }

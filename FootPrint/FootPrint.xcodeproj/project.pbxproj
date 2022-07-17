@@ -30,6 +30,7 @@
 		BF9E9C412883CF040012A9D1 /* DetailTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C402883CF040012A9D1 /* DetailTravel.swift */; };
 		BF9E9C432883D1A90012A9D1 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C422883D1A90012A9D1 /* DateConverter.swift */; };
 		BF9E9C4E2883DA4C0012A9D1 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = BF9E9C4D2883DA4C0012A9D1 /* PopupView */; };
+		BF9E9C502883EA3F0012A9D1 /* MainTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		BF9E9C3E2883CCF10012A9D1 /* UploadTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTravelViewModel.swift; sourceTree = "<group>"; };
 		BF9E9C402883CF040012A9D1 /* DetailTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravel.swift; sourceTree = "<group>"; };
 		BF9E9C422883D1A90012A9D1 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
+		BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTravel.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				BF4AF32E2875B23200FDC3C6 /* User.swift */,
 				BF9E9C402883CF040012A9D1 /* DetailTravel.swift */,
+				BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				BF9C2B69282C136F007E6543 /* DetailTravelView.swift in Sources */,
 				BFFE6F24281FF429001B309C /* MainTravelView.swift in Sources */,
 				BF5224322823C51700674695 /* VisitedCell.swift in Sources */,
+				BF9E9C502883EA3F0012A9D1 /* MainTravel.swift in Sources */,
 				BFFE6F14281EDAFF001B309C /* UserCell.swift in Sources */,
 				BFFE6F20281FF35B001B309C /* EditTravelView.swift in Sources */,
 				BFFE6F1E281EE63C001B309C /* HistoryCell.swift in Sources */,
