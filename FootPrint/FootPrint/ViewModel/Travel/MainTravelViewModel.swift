@@ -11,10 +11,10 @@ import Alamofire
 class MainTravelViewModel: ObservableObject {
     
     @Published var created = false
-    private var travel: MainTravel
+    @Published var travel: MainTravel
     
-    init() {
-        self.travel = MainTravel(likeNum: 0)
+    init(travel: MainTravel) {
+        self.travel = travel
     }
     
     func createMainTravel(title: String, startDate: String, endDate: String, isVisible: Bool, isCompleted: Bool, mainImagePath: String) {

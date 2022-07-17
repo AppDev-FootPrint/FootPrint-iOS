@@ -13,8 +13,8 @@ struct FeedView: View {
     
     var body: some View {
         ScrollView {
-            ForEach (0..<10) { _ in
-                NavigationLink (destination: MainTravelView(), label: {
+            ForEach (viewModel.travels) { travel in
+                NavigationLink (destination: MainTravelView(viewModel: MainTravelViewModel(travel: travel)), label: {
                     FeedCell()
                         .foregroundColor(.black)
                 }).buttonStyle(PlainButtonStyle())
