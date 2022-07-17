@@ -18,9 +18,12 @@ struct MainTravel: Identifiable, Decodable {
     var createDetailTravelRequest: [DetailTravel]?
     
     var likeNum: Int?
+    var commentCount: Int?
     var createdAt: String?
     var writerInfo: WriterInfo?
     
+    
+    var didLike: Bool? = false
 }
 
 struct WriterInfo: Identifiable, Decodable {

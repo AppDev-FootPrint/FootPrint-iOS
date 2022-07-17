@@ -10,11 +10,18 @@ import SwiftUI
 
 struct FeedCell: View {
     
-    @State var numberOfHeart: Int = 1_000
-    @State var numberOfComment: Int = 217
-    
-    @State var isHeartClicked: Bool = false
+    @ObservedObject var viewModel: FeedCellViewModel
+
     @State var isClipped: Bool = false
+    
+    var didLike: Bool { return viewModel.travel.didLike ?? false }
+    var numberOfLike: Int { return viewModel.travel.likeNum ?? 1_000 }
+    var numberOfComment: Int { return viewModel.travel.commentCount ?? 0 }
+    
+    init(viewModel: FeedCellViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         HStack {
             Image("thumbnail")
@@ -32,30 +39,31 @@ struct FeedCell: View {
                         .scaledToFit()
                         .frame(width: 20)
                     
-                    Text("username")
+                    Text("\(viewModel.travel.writerInfo?.username ?? "username")")
                 }
                 
-                Text("담배가게 여행")
+                Text("\(viewModel.travel.title ?? "no_title")")
                     .padding(.top, 10)
                     .padding(.bottom, 30)
                 
                 HStack {
                     VStack {
-                        Image(systemName: isHeartClicked ? "heart.fill" : "heart")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25)
-                            .foregroundColor(isHeartClicked ? .red : .black)
-                            .onTapGesture {
-                                isHeartClicked.toggle()
-                            }
+                        Button(action: {
+                            didLike ? viewModel.unlike() : viewModel.like()
+                        }, label: {
+                            Image(systemName: didLike ? "heart.fill" : "heart")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25)
+                                .foregroundColor(didLike ? .red : .black)
+                        })
 
                         
-                        if numberOfHeart > 999 {
+                        if numberOfLike > 999 {
                             Text("999+")
                                 .font(.system(size: 15))
                         } else {
-                            Text(String(numberOfHeart))
+                            Text(String(numberOfLike))
                                 .font(.system(size: 15))
                         }
                     }
@@ -95,11 +103,5 @@ struct FeedCell: View {
             }
             Spacer()
         }
-    }
-}
-
-struct FeedCell_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedCell()
     }
 }

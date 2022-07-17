@@ -23,6 +23,8 @@ class FeedCellViewModel: ObservableObject {
     func like() {
         guard let user = AuthViewModel.shared.userSession else { return }
         guard let travelId = travel.id else { return }
+        
+        self.travel.didLike = true
     }
     
     func unlike() {
@@ -32,6 +34,7 @@ class FeedCellViewModel: ObservableObject {
         guard let uid = AuthViewModel.shared.userSession else { return }
         guard let travelId = travel.id else { return }
         
+        self.travel.didLike = false
     }
     
     func checkIfUserLikedPost() {

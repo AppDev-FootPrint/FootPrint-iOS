@@ -15,7 +15,7 @@ struct FeedView: View {
         ScrollView {
             ForEach (viewModel.travels) { travel in
                 NavigationLink (destination: MainTravelView(viewModel: MainTravelViewModel(travel: travel)), label: {
-                    FeedCell()
+                    FeedCell(viewModel: FeedCellViewModel(travel: travel))
                         .foregroundColor(.black)
                 }).buttonStyle(PlainButtonStyle())
             }
