@@ -16,7 +16,8 @@ struct CreateMainTravelView: View {
     @State private var isPrivate: Bool = false
     
     @ObservedObject var viewModel = MainTravelViewModel(travel: MainTravel(likeNum: 0))
-    @State var showToast = false
+    @State var showToast = false // 게시글 등록 완룔 메시지
+    @State var showWarning = false // 제목 입력 X시
     
     var body: some View {
         VStack {
@@ -65,7 +66,11 @@ struct CreateMainTravelView: View {
                 
                 // 새 여행 피드가 생성된 프로필 뷰로 전환
                 Button(action: {
-                    viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isPrivate, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
+                    if title.count == 0 {
+                        showWarning = true
+                    } else {
+                        viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isPrivate, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
+                    }
                 }, label: {
                     Text("Apply")
                         .foregroundColor(.white)
@@ -83,12 +88,20 @@ struct CreateMainTravelView: View {
             
             Spacer()
         }
-        .popup(isPresented: $showToast, type: .floater(), position: .bottom, autohideIn: 2) {
+        .popup(isPresented: $showToast, type: .floater(), position: .bottom, autohideIn: 1.5) {
             Text("새 여행 등록 완료 :)")
                 .frame(width: 200, height: 60)
                 .foregroundColor(.white)
                 .background(Color("blue"))
                 .cornerRadius(30.0)
+        }
+        .popup(isPresented: $showWarning, type: .floater(), position: .bottom, autohideIn: 1.5) {
+            Text("등록 실패!\n 제목을 입력해주세요 :(")
+                .frame(width: 200, height: 60)
+                .foregroundColor(.white)
+                .background(Color("red"))
+                .cornerRadius(30.0)
+                .multilineTextAlignment(.center)
         }
     }
 }
