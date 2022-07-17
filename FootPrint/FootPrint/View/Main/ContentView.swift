@@ -18,7 +18,7 @@ struct ContentView: View {
             }
             else {
                 if let user = viewModel.userSession {
-                    MainTabView(user: user)
+                    MainTabView(user: user, selectedIndex: $selectedIndex)
                 }
             }
         }
