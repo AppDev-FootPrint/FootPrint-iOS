@@ -15,7 +15,7 @@ struct CreateMainTravelView: View {
     @State var title: String = ""
     @State private var isPrivate: Bool = false
     
-    @ObservedObject var viewModel = UploadTravelViewModel()
+    @ObservedObject var viewModel = MainTravelViewModel(travel: MainTravel(likeNum: 0))
     @State var showToast = false
     
     var body: some View {
@@ -90,11 +90,5 @@ struct CreateMainTravelView: View {
                 .background(Color("blue"))
                 .cornerRadius(30.0)
         }
-    }
-}
-
-struct CreateMainTravelView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateMainTravelView()
     }
 }

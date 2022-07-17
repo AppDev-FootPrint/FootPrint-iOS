@@ -17,8 +17,8 @@ struct MainTravel: Identifiable, Decodable {
     var mainImagePath: String? // 중복불가
     var createDetailTravelRequest: [DetailTravel]?
     
-    var likeNum: Int
-    var createAt: String?
+    var likeNum: Int?
+    var createdAt: String?
     var writerInfo: WriterInfo?
     
 }
@@ -27,4 +27,9 @@ struct WriterInfo: Identifiable, Decodable {
     var id: Int
     var username: String
     var nickname: String
+}
+
+struct travelBundle: Decodable {
+    var total: Int
+    var mainTravelSimpleInfoResponses: [MainTravel]
 }

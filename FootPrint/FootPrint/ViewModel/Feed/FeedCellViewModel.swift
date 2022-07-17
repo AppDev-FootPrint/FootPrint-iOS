@@ -28,7 +28,7 @@ class FeedCellViewModel: ObservableObject {
     func unlike() {
         
         // 예외처리 : 좋아요가 마이너스일 수는 없음
-        guard (travel.likeNum > 0) else { return }
+        guard (travel.likeNum ?? 0 > 0) else { return }
         guard let uid = AuthViewModel.shared.userSession else { return }
         guard let travelId = travel.id else { return }
         

@@ -27,8 +27,19 @@ class FeedViewModel: ObservableObject {
                 .validate(statusCode: 200..<300)
                 .responseString { (response) in
                     switch response.result {
-                    case .success :
-                        print("✅ DEBUG on fetchTravels(): \(response.result)")
+                    case .success(let totalTravels) :
+                        print("✅ DEBUG on fetchTravels(): \(totalTravels)")
+                        let json = totalTravels.data(using: .utf8)!
+                        do {
+                            let bundleData = try JSONDecoder().decode(travelBundle.self, from: json)
+                                // 배열로 받은 결과데이터 배열에 추가할 수 있도록
+                            for singleData in bundleData.mainTravelSimpleInfoResponses {
+                                self.travels.append(MainTravel(id: singleData.id, title: singleData.title, mainImagePath: singleData.mainImagePath, likeNum: 1000, createdAt: singleData.createdAt, writerInfo: WriterInfo(id: singleData.writerInfo?.id ?? 1, username: singleData.writerInfo?.username ?? "", nickname: singleData.writerInfo?.nickname ?? "")))
+                            }
+                            print("✅ DEBUG on fetchTravels(): \(bundleData)")
+                        } catch (let e) {
+                            print("⚠️ DEBUG on fetchTravels(): \(e)")
+                        }
                     case .failure :
                         print("🚫 DEBUG on fetchTravels(): \(response.result)")
             }

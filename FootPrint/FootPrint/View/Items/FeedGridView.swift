@@ -8,16 +8,19 @@
 
 import SwiftUI
 
+
 struct FeedGridView: View {
     
     private let items = [GridItem(), GridItem()]
     private let width = UIScreen.main.bounds.width / 2
+    
+    @ObservedObject var viewModel : FeedViewModel
    
     var body: some View {
         LazyVGrid(columns: items, content: {
-            ForEach (0 ..< 10) { _ in
+            ForEach (viewModel.travels) { travel in
                NavigationLink(
-                destination: MainTravelView(),
+                destination: MainTravelView(viewModel: MainTravelViewModel(travel: travel)),
                 label: {
                     Image(systemName: "photo")
                         .resizable()
@@ -28,11 +31,5 @@ struct FeedGridView: View {
                 })
             }
         })
-    }
-}
-
-struct FeedGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedGridView()
     }
 }

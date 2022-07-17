@@ -15,6 +15,8 @@ struct MainTravelView: View {
     @State private var userState : Bool = true // 로그인한 계정의 travel이라면 true
     @State private var clipped: Bool = true // 여행을 따로 저장? 디폴트는 false (저장하지 않은 상태)
     
+    @ObservedObject var viewModel : MainTravelViewModel
+    
     var body: some View {
         VStack {
             HStack {
@@ -30,10 +32,21 @@ struct MainTravelView: View {
                     } else { // 스크랩한 경우
                         Image(systemName: "bookmark.fill")
                     }
-                } else { // 사용자 본인의 글인 경우 
-                    Image(systemName: "ellipsis")
-                        .rotationEffect(.degrees(90))
-                        .padding(.trailing, 20)
+                } else { // 사용자 본인의 글인 경우
+                    Menu(content: {
+                        Button(action: {}, label: {
+                            Label("Modify", systemImage: "pencil")
+                        })
+
+                        Button(action: {}, label: {
+                            Label("Delete", systemImage: "delete.left")
+                        })
+                    }, label: {
+                        Image(systemName: "ellipsis")
+                            .rotationEffect(.degrees(90))
+                            .padding(.trailing, 20)
+                            .foregroundColor(.black)
+                    })
                 }
             }
             
@@ -62,11 +75,5 @@ struct MainTravelView: View {
                 })
             }
         }
-    }
-}
-
-struct MainTravelView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTravelView()
     }
 }
