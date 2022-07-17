@@ -96,4 +96,25 @@ class UploadTravelViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteMainTravel(travelId: Int) {
+        guard let user = AuthViewModel.shared.userSession else { return }
+        
+        let url = "\(Storage().SERVER_URL)/api/main-travels/\(travelId)"
+        
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "DELETE"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("\(user.accessToken ?? "no_permission")", forHTTPHeaderField: "Authorization")
+        
+        AF.request(request)
+            .validate(statusCode: 200..<300)
+            .responseString { (response) in
+                if response.response?.statusCode == 200 {
+                    print("✅ DEBUG on deleteMainTravel(): success to delete!\n \(response.result)")
+                } else {
+                    print("🚫 DEBUG on deleteMainTravel(): \(response.result)")
+            }
+        }
+    }
 }
