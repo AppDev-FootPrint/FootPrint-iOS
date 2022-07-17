@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct CreateMainTravelView: View {
     
-    @State private var date = Date()
+    @State private var startDate = Date()
+    @State private var endDate = Date()
     @State var title: String = ""
+    @State private var isPrivate: Bool = false
+    
+    @ObservedObject var viewModel = UploadTravelViewModel()
+    @State var showToast = false
     
     var body: some View {
         VStack {
@@ -24,16 +30,29 @@ struct CreateMainTravelView: View {
             }
             .padding(.top)
             
-            DatePicker(
-                    "Start Date",
-                    selection: $date,
-                    displayedComponents: [.date]
-                )
-                .datePickerStyle(.graphical)
+            DatePicker("Start Date", selection: $startDate, displayedComponents: [.date])
+                .padding()
+            DatePicker("End Date", selection: $endDate, displayedComponents: [.date])
+                .padding()
             
             HStack {
                 
                 Spacer()
+        
+                // default: 공개 게시글
+                Button(action: {
+                    if isPrivate {
+                        isPrivate = false
+                    } else {
+                        isPrivate = true
+                    }
+                }, label: {
+                    Image(systemName: isPrivate ? "lock" : "lock.open")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20)
+                        .padding(5)
+                })
                 
                 Button(action: {}, label: {
                     Text("Clear")
@@ -45,7 +64,9 @@ struct CreateMainTravelView: View {
                 })
                 
                 // 새 여행 피드가 생성된 프로필 뷰로 전환
-                NavigationLink(destination: MainTravelView(), label: {
+                Button(action: {
+                    viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isPrivate, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
+                }, label: {
                     Text("Apply")
                         .foregroundColor(.white)
                         .padding(7)
@@ -53,9 +74,21 @@ struct CreateMainTravelView: View {
                         .cornerRadius(10)
                         .padding(.trailing, 20)
                 })
+                .onReceive(viewModel.$created, perform: { completed in
+                    if completed {
+                        showToast = true
+                    }
+                })
             }
             
             Spacer()
+        }
+        .popup(isPresented: $showToast, type: .floater(), position: .bottom, autohideIn: 2) {
+            Text("새 여행 등록 완료 :)")
+                .frame(width: 200, height: 60)
+                .foregroundColor(.white)
+                .background(Color("blue"))
+                .cornerRadius(30.0)
         }
     }
 }

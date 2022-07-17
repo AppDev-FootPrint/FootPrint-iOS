@@ -39,7 +39,7 @@ class AuthViewModel: ObservableObject {
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on register() : ✅ success to register")
             } else {
-                print("DEBUG on register() : ❌ fail to register")
+                print("DEBUG on register() : 🚫 fail to register")
             }
         }
     }

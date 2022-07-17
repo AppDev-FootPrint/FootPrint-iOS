@@ -26,6 +26,10 @@
 		BF9C2B67282BAF16007E6543 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B66282BAF16007E6543 /* FeedCell.swift */; };
 		BF9C2B69282C136F007E6543 /* DetailTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C2B68282C136F007E6543 /* DetailTravelView.swift */; };
 		BF9E9C3C288333C40012A9D1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C3B288333C40012A9D1 /* ProfileViewModel.swift */; };
+		BF9E9C3F2883CCF10012A9D1 /* UploadTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C3E2883CCF10012A9D1 /* UploadTravelViewModel.swift */; };
+		BF9E9C412883CF040012A9D1 /* DetailTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C402883CF040012A9D1 /* DetailTravel.swift */; };
+		BF9E9C432883D1A90012A9D1 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C422883D1A90012A9D1 /* DateConverter.swift */; };
+		BF9E9C4E2883DA4C0012A9D1 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = BF9E9C4D2883DA4C0012A9D1 /* PopupView */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -71,6 +75,9 @@
 		BF9C2B66282BAF16007E6543 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		BF9C2B68282C136F007E6543 /* DetailTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravelView.swift; sourceTree = "<group>"; };
 		BF9E9C3B288333C40012A9D1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		BF9E9C3E2883CCF10012A9D1 /* UploadTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTravelViewModel.swift; sourceTree = "<group>"; };
+		BF9E9C402883CF040012A9D1 /* DetailTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravel.swift; sourceTree = "<group>"; };
+		BF9E9C422883D1A90012A9D1 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9E9C4E2883DA4C0012A9D1 /* PopupView in Frameworks */,
 				BF4AF3322875B2C600FDC3C6 /* Alamofire in Frameworks */,
 				BF3DCDD6287EEDA500BED9D7 /* Alamofire in Frameworks */,
 				BF3DCDD9287EF02B00BED9D7 /* JWTDecode in Frameworks */,
@@ -146,6 +154,14 @@
 				BF9E9C3B288333C40012A9D1 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		BF9E9C3D2883CCE40012A9D1 /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				BF9E9C3E2883CCF10012A9D1 /* UploadTravelViewModel.swift */,
+			);
+			path = Travel;
 			sourceTree = "<group>";
 		};
 		BFC252C22819722C00E7EDDA = {
@@ -193,6 +209,7 @@
 				BFFE6F17281EDB76001B309C /* Extensions.swift */,
 				BF5224332823D85200674695 /* ImagePicker.swift */,
 				BF3904B128756629008C27F7 /* ImageSlider.swift */,
+				BF9E9C422883D1A90012A9D1 /* DateConverter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -208,6 +225,7 @@
 		BFC252DE2819728A00E7EDDA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BF9E9C3D2883CCE40012A9D1 /* Travel */,
 				BF9E9C3A288333B30012A9D1 /* Profile */,
 				BF4AF3332875B2FF00FDC3C6 /* Authentication */,
 			);
@@ -233,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4AF32E2875B23200FDC3C6 /* User.swift */,
+				BF9E9C402883CF040012A9D1 /* DetailTravel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,11 +279,11 @@
 			children = (
 				BFFE6F00281E9894001B309C /* CreateMainTravelView.swift */,
 				BFFE6F23281FF429001B309C /* MainTravelView.swift */,
+				BFFE6F21281FF370001B309C /* CreateDetailTravelView.swift */,
 				BF9C2B68282C136F007E6543 /* DetailTravelView.swift */,
 				BF5224312823C51700674695 /* VisitedCell.swift */,
 				BFF60D742833D46500EBC809 /* PriceCell.swift */,
 				BFFE6F1F281FF35B001B309C /* EditTravelView.swift */,
-				BFFE6F21281FF370001B309C /* CreateDetailTravelView.swift */,
 				BFFE6F25281FFCFA001B309C /* CategoryButton.swift */,
 			);
 			path = Travel;
@@ -327,6 +346,7 @@
 				BF4AF3312875B2C600FDC3C6 /* Alamofire */,
 				BF3DCDD5287EEDA500BED9D7 /* Alamofire */,
 				BF3DCDD8287EF02B00BED9D7 /* JWTDecode */,
+				BF9E9C4D2883DA4C0012A9D1 /* PopupView */,
 			);
 			productName = FootPrint;
 			productReference = BFC252CB2819722C00E7EDDA /* FootPrint.app */;
@@ -358,8 +378,8 @@
 			mainGroup = BFC252C22819722C00E7EDDA;
 			packageReferences = (
 				BF4AF3302875B2C600FDC3C6 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				BF3DCDD4287EEDA500BED9D7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BF3DCDD7287EF02B00BED9D7 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
+				BF9E9C4C2883DA4C0012A9D1 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = BFC252CC2819722C00E7EDDA /* Products */;
 			projectDirPath = "";
@@ -389,6 +409,7 @@
 			files = (
 				BFFE6F10281EDAAC001B309C /* SearchBar.swift in Sources */,
 				BFC37CA728378DFC00640CEA /* NotificationCell.swift in Sources */,
+				BF9E9C3F2883CCF10012A9D1 /* UploadTravelViewModel.swift in Sources */,
 				BFFE6F04281E98C3001B309C /* ProfileView.swift in Sources */,
 				BF3DCDDE287EF21F00BED9D7 /* RegistrationView.swift in Sources */,
 				BF5224342823D85200674695 /* ImagePicker.swift in Sources */,
@@ -396,6 +417,7 @@
 				BFFE6F0E281E9F00001B309C /* ProfileActionButtonView.swift in Sources */,
 				BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */,
 				BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */,
+				BF9E9C412883CF040012A9D1 /* DetailTravel.swift in Sources */,
 				BF7DA94928290EE3008FE410 /* CustomTextField.swift in Sources */,
 				BF9C2B62282A6E81007E6543 /* CustomSecureField.swift in Sources */,
 				BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */,
@@ -403,6 +425,7 @@
 				BF9C2B67282BAF16007E6543 /* FeedCell.swift in Sources */,
 				BF9E9C3C288333C40012A9D1 /* ProfileViewModel.swift in Sources */,
 				BFFE6F26281FFCFA001B309C /* CategoryButton.swift in Sources */,
+				BF9E9C432883D1A90012A9D1 /* DateConverter.swift in Sources */,
 				BFFE6F06281E9E13001B309C /* ProfileHeaderView.swift in Sources */,
 				BFFE6F1A281EDBE1001B309C /* RecentSearchListView.swift in Sources */,
 				BF3DCDDC287EF1EE00BED9D7 /* LoginView.swift in Sources */,
@@ -631,14 +654,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BF3DCDD4287EEDA500BED9D7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.1;
-			};
-		};
 		BF3DCDD7287EF02B00BED9D7 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
@@ -653,6 +668,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.6.1;
+			};
+		};
+		BF9E9C4C2883DA4C0012A9D1 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -672,6 +695,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF4AF3302875B2C600FDC3C6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		BF9E9C4D2883DA4C0012A9D1 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF9E9C4C2883DA4C0012A9D1 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

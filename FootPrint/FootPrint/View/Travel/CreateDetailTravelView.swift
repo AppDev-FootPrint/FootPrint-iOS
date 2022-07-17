@@ -11,7 +11,6 @@ struct CreateDetailTravelView: View {
     
     @State private var searchKeyword: String = ""
     @State private var comment: String = ""
-    @State private var isPrivate: Bool = false
     
     @State private var selectedImage: UIImage?
     @State private var image: Image?
@@ -25,21 +24,6 @@ struct CreateDetailTravelView: View {
             
             HStack {
                 Spacer()
-                
-                // default: 공개 게시글
-                Button(action: {
-                    if isPrivate {
-                        isPrivate = false
-                    } else {
-                        isPrivate = true
-                    }
-                }, label: {
-                    Image(systemName: isPrivate ? "lock" : "lock.open")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 20)
-                        .padding(5)
-                })
                 
                 Button(action: {}, label: {
                     Text("임시저장")
