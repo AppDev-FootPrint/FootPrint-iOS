@@ -8,7 +8,7 @@
 import SwiftUI
 import Alamofire
 
-class UploadTravelViewModel: ObservableObject {
+class TravelViewModel: ObservableObject {
     
     @Published var created = false
     private var travel: MainTravel
