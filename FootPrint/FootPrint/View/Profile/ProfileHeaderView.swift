@@ -46,7 +46,7 @@ struct ProfileHeaderView: View {
                     .padding(.leading, 25)
                     .multilineTextAlignment(.leading)
             }
-            ProfileActionButtonView()
+            ProfileActionButtonView(viewModel: viewModel)
         }
     }
 }

@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ProfileActionButtonView: View {
     
-    var isCurrentUser = true
-    var isFollowed = false
+    @ObservedObject var viewModel: ProfileViewModel
+    var isFollowed : Bool { return viewModel.user.isFollowed ?? false}
+    @State private var showEditProfile = false
     
     var body: some View {
-        if isCurrentUser {
-            
+        if viewModel.user.isCurrentUser { // 로그인한 유저 본인의 프로필이라면 edit profile, setting button을 show
             HStack {
                 // edit profile button
-                Button(action: {}, label: {
+                Button(action: { showEditProfile.toggle() }, label: {
                     Text("Edit Profile")
                         .font(.system(size: 14, weight: .semibold))
                         .frame(width: 170, height: 32)
@@ -27,6 +27,8 @@ struct ProfileActionButtonView: View {
                                 .stroke(Color.gray, lineWidth: 1)
                         )
                         .padding(.trailing, 10)
+                }).sheet(isPresented: $showEditProfile, content: {
+                    // bio 수정용
                 })
                 
                 // private setting button
@@ -47,8 +49,8 @@ struct ProfileActionButtonView: View {
             }
 
         } else {
-            // show follow and messeage buttons
-                Button(action: {}, label: {
+            // 현재 로그인한 유저가 아닌 다른 유저의 프로필이하면 shows buttons for follow and messeage
+            Button(action: { isFollowed ? viewModel.unfollow() : viewModel.follow() }, label: {
                     Text(isFollowed ? "Following" : "Follow") // 삼항연산 사용
                         .font(.system(size: 14, weight: .semibold))
                         .frame(width: 150, height: 32)
@@ -59,12 +61,17 @@ struct ProfileActionButtonView: View {
                                 .stroke(Color.gray, lineWidth: isFollowed ? 1 : 0)
                         )
                 }).cornerRadius(3)
+            
+            Button(action: {}, label: {
+                Text("Messaage")
+                    .font(.system(size: 14, weight: .semibold))
+                    .frame(width: 175, height: 32)
+                    .foregroundColor(.black)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 3)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+            })
         }
-    }
-}
-
-struct ProfileActionButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileActionButtonView()
     }
 }

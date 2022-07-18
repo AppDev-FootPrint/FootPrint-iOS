@@ -15,4 +15,6 @@ struct User: Identifiable, Codable {
     var accessToken: String?
     
     var bio: String?
+    var isFollowed: Bool? = false
+    var isCurrentUser: Bool { return AuthViewModel.shared.userSession?.id == id}
 }
