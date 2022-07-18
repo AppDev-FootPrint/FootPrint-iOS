@@ -21,13 +21,30 @@ struct LoginView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Text("Foot Print")
-                        .font(.system(size: 50, weight: .heavy, design: .serif))
-                        .foregroundColor(Color("gray"))
-                        .frame(maxWidth: .infinity, alignment: .center)
+                    HStack {
+                        Text("Foot Print")
+                            .font(.system(size: 50, weight: .heavy, design: .serif))
+                            .foregroundColor(Color("darkgray"))
+                            .frame(alignment: .center)
+                        
+                        Image("footprint")
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(Color("darkgray"))
+                            .rotationEffect(.degrees(40))
+                            .scaledToFit()
+                            .frame(width: 60)
+                            .padding(.bottom, 40)
+                    }
                     
                     
                     VStack {
+                        
+                        Text("* LOGIN IS REQUIRED")
+                            .font(.system(size: 20, weight: .heavy, design: .serif))
+                            .foregroundColor(Color("gray"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 30)
                         CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person")
                             .padding()
                             .cornerRadius(15)

@@ -18,14 +18,14 @@ struct RegistrationView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color("bgColor")], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color("lightgray")], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             VStack {
                 
                 Text("Foot print")
                     .font(.system(size: 50, weight: .heavy, design: .serif))
-                    .foregroundColor(Color("fontColor"))
+                    .foregroundColor(Color("gray"))
                 
                 VStack {
                     CustomTextField(text: $nickname, placeholder: Text("Nickname"), imageName: "face.smiling")
