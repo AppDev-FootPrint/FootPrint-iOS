@@ -42,11 +42,7 @@ struct CreateMainTravelView: View {
         
                 // default: 공개 게시글
                 Button(action: {
-                    if isPrivate {
-                        isPrivate = false
-                    } else {
-                        isPrivate = true
-                    }
+                    isPrivate.toggle()
                 }, label: {
                     Image(systemName: isPrivate ? "lock" : "lock.open")
                         .resizable()
