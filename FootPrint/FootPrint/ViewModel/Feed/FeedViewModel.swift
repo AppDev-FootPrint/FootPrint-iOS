@@ -29,7 +29,7 @@ class FeedViewModel: ObservableObject {
                 .responseString { (response) in
                     switch response.result {
                     case .success(let totalTravels) :
-                        print("✅ DEBUG on fetchTravels(): \(totalTravels)")
+                        print("✅ DEBUG on fetchAllTravels(): \(totalTravels)")
                         let json = totalTravels.data(using: .utf8)!
                         do {
                             let bundleData = try JSONDecoder().decode(travelBundle.self, from: json)
@@ -37,12 +37,12 @@ class FeedViewModel: ObservableObject {
                             for singleData in bundleData.mainTravelSimpleInfoResponses {
                                 self.travels.append(MainTravel(id: singleData.id, title: singleData.title, mainImagePath: singleData.mainImagePath, likeNum: 1000, createdAt: singleData.createdAt, writerInfo: WriterInfo(id: singleData.writerInfo?.id ?? 1, username: singleData.writerInfo?.username ?? "", nickname: singleData.writerInfo?.nickname ?? "")))
                             }
-                            print("✅ DEBUG on fetchTravels(): \(bundleData)")
+                            print("✅ DEBUG on fetchAllTravels(): \(bundleData)")
                         } catch (let e) {
-                            print("⚠️ DEBUG on fetchTravels(): \(e)")
+                            print("⚠️ DEBUG on fetchAllTravels(): \(e)")
                         }
                     case .failure :
-                        print("🚫 DEBUG on fetchTravels(): \(response.result)")
+                        print("🚫 DEBUG on fetchAllTravels(): \(response.result)")
             }
         }
     }
