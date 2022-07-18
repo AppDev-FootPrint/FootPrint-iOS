@@ -75,10 +75,8 @@ class FeedGridViewModel: ObservableObject {
                        headers: ["Content-Type":"application/json", "Accept":"application/json", "Authorization": String(user.accessToken ?? "no_permission")])
                 .validate(statusCode: 200..<300)
                 .responseString { (response) in
-                    print("fetchUserTravels: \(response.response?.statusCode)")
                     switch response.result {
                     case .success(let totalTravels) : // if response.response.statuscode == 201
-                        print("✅ DEBUG on fetchUserTravels(): \(totalTravels)")
                         let json = totalTravels.data(using: .utf8)!
                         do {
                             let bundleData = try JSONDecoder().decode(travelBundle.self, from: json)

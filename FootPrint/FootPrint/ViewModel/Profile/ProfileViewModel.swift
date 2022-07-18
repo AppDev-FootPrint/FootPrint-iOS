@@ -28,7 +28,6 @@ class ProfileViewModel: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("\(user.accessToken ?? "no_value")", forHTTPHeaderField: "Authorization")
         request.timeoutInterval = 10
-        
 
         // httpBody 에 parameters 추가
         do {
@@ -80,5 +79,93 @@ class ProfileViewModel: ObservableObject {
     }
     
     func fetchUserStats() {
+        guard let uid = user.id else { return }
+        var posts: Int = 0
+        var followers: Int = 0
+        var followings: Int = 0
+        
+        let requestHeaders: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json", "Authorization": String(user.accessToken ?? "no_permission")]
+        
+        var url = "\(Storage().SERVER_URL)/api/members/\(uid)/follower"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: URLEncoding.default,
+                       headers: requestHeaders)
+                .validate(statusCode: 200..<300)
+                .responseString { (response) in
+                    switch response.result {
+                    case .success(let body) : // if response.response.statuscode == 200
+                        let json = body.data(using: .utf8)!
+                        do {
+                            let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
+//                            for singleData in bundleData {
+//                            }
+                            followers = bundleData.count
+                            print("✅ DEBUG on fetchUserStats(): \(bundleData.count)")
+                        } catch (let e) {
+                            print("⚠️ DEBUG on fetchUserStats(): \(e)")
+                        }
+                    case .failure :
+                        print("🚫 DEBUG on fetchUserStats(): \(response.result)")
+            }
+        }
+        
+        url = "\(Storage().SERVER_URL)/api/members/\(uid)/followee"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: URLEncoding.default,
+                       headers: requestHeaders)
+                .validate(statusCode: 200..<300)
+                .responseString { (response) in
+                    switch response.result {
+                    case .success(let body) : // if response.response.statuscode == 200
+                        let json = body.data(using: .utf8)!
+                        do {
+                            let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
+                            followings = bundleData.count
+                            print("✅ DEBUG on fetchUserStats(): \(bundleData.count)")
+                        } catch (let e) {
+                            print("⚠️ DEBUG on fetchUserStats(): \(e)")
+                        }
+                    case .failure :
+                        print("🚫 DEBUG on fetchUserStats(): \(response.result)")
+            }
+        }
+        
+        // needs refactoring :: 비동기
+        // 유저의 포스트 개수 확인
+        url = "\(Storage().SERVER_URL)/api/main-travels/"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: URLEncoding.default,
+                       headers: requestHeaders)
+                .validate(statusCode: 200..<300)
+                .responseString { (response) in
+                    switch response.result {
+                    case .success(let totalTravels) : // if response.response.statuscode == 201
+                        let json = totalTravels.data(using: .utf8)!
+                        do {
+                            let bundleData = try JSONDecoder().decode(travelBundle.self, from: json)
+                            
+                            // needs refactoring
+                            for singleData in bundleData.mainTravelSimpleInfoResponses {
+                                if singleData.writerInfo?.id ?? 0 == uid {
+                                    posts += 1
+                                }
+                            }
+                            print("✅ DEBUG on fetchUserStats(): \(bundleData.total)")
+                            
+                            self.user.stats = UserStats(following: followings, posts: posts, followers: followers)
+                            print("here::: \(self.user.stats)")
+                        } catch (let e) {
+                            print("⚠️ DEBUG on fetchUserStats(): \(e)")
+                        }
+                    case .failure :
+                        print("🚫 DEBUG on fetchUserStats(): \(response.result)")
+            }
+        }
     }
 }
