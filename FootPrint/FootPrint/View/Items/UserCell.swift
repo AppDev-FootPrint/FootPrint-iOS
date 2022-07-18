@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct UserCell: View {
+    
+    let user: User
+    
     var body: some View {
         HStack {
-            
             Image(systemName: "person.circle")
                 .resizable()
                 .scaledToFit()
@@ -18,7 +20,7 @@ struct UserCell: View {
                 .clipShape(Circle())
             
             VStack(alignment: .leading) {
-                Text("대전 소개하는 사람")
+                Text("\(user.username)")
                     .font(.system(size: 14, weight: .semibold))
                 
                 Text("djLover")
@@ -27,11 +29,5 @@ struct UserCell: View {
             
             Spacer()
         }
-    }
-}
-
-struct UserCell_Previews: PreviewProvider {
-    static var previews: some View {
-        UserCell()
     }
 }
