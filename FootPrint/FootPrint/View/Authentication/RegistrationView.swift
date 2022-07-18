@@ -7,12 +7,15 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct RegistrationView: View {
     
     @State private var nickname = ""
     @State private var username = ""
     @State private var password = ""
+    @State var showWarning = false // 빈칸있으면 가입불가
+    
     @Environment(\.presentationMode) var mode
     @EnvironmentObject var viewModel : AuthViewModel
     
@@ -65,7 +68,11 @@ struct RegistrationView: View {
                     
                     // sign up
                     Button(action: {
-                        viewModel.register(username: username, password: password, nickname: nickname)
+                        if nickname.count == 0 || username.count == 0 || password.count == 0 {
+                            self.showWarning = true
+                        } else {
+                            viewModel.register(username: username, password: password, nickname: nickname)
+                        }
                     }, label: {
                         Text("Sign Up")
                             .font(.headline)
@@ -103,6 +110,14 @@ struct RegistrationView: View {
                 self.mode.wrappedValue.dismiss()
             }
         })
+        .popup(isPresented: $showWarning, type: .floater(), position: .bottom, autohideIn: 2) {
+            Text("회원가입 실패!\n 빈칸을 모두 채워주세요 :(")
+                .frame(width: 230, height: 60)
+                .foregroundColor(.white)
+                .background(Color("red"))
+                .cornerRadius(30.0)
+                .multilineTextAlignment(.center)
+        }
     }
 }
 

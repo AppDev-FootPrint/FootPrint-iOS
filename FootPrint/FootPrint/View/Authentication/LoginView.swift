@@ -7,11 +7,13 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct LoginView: View {
     
     @State private var username = ""
     @State private var password = ""
+    @State private var showWarning: Bool = false
     @EnvironmentObject var viewModel : AuthViewModel
     
     var body: some View {
@@ -58,7 +60,11 @@ struct LoginView: View {
                         
                         // sign in
                         Button(action: {
-                            viewModel.login(username: username, password: password)
+                            if username.count == 0 || password.count == 0 {
+                                self.showWarning = true
+                            } else {
+                                viewModel.login(username: username, password: password)
+                            }
                         }, label: {
                             Text("Sign in")
                                 .font(.headline)
@@ -91,6 +97,14 @@ struct LoginView: View {
                 }
                 .padding(.top)
             }
+        }
+        .popup(isPresented: $showWarning, type: .floater(), position: .bottom, autohideIn: 2) {
+            Text("로그인 실패!\n 입력하지않은 정보가 있습니다 :(")
+                .frame(width: 270, height: 60)
+                .foregroundColor(.white)
+                .background(Color("red"))
+                .cornerRadius(30.0)
+                .multilineTextAlignment(.center)
         }
     }
 }
