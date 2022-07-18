@@ -28,7 +28,6 @@ struct RegistrationView: View {
                     .foregroundColor(Color("fontColor"))
                 
                 VStack {
-                    
                     CustomTextField(text: $nickname, placeholder: Text("Nickname"), imageName: "face.smiling")
                         .padding()
                         .cornerRadius(15)
@@ -82,6 +81,11 @@ struct RegistrationView: View {
             }
             .padding(.top, 110)
         }
+        .onReceive(viewModel.$created, perform: { completed in
+            if completed {
+                self.mode.wrappedValue.dismiss()
+            }
+        })
     }
 }
 

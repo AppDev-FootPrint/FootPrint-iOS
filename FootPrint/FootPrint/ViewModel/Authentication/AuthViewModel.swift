@@ -12,6 +12,7 @@ import JWTDecode
 class AuthViewModel: ObservableObject {
     
     @Published var userSession: User?
+    @Published var created: Bool = false
     
     static let shared = AuthViewModel()
     
@@ -37,6 +38,7 @@ class AuthViewModel: ObservableObject {
         AF.request(request).responseString { (response) in
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on register() : ✅ success to register")
+                self.created = true
             } else {
                 print("DEBUG on register() : 🚫 fail to register")
             }
