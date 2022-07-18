@@ -13,7 +13,7 @@ struct MainTabView: View {
     
     var body: some View {
         NavigationView {
-            TabView(selection: $selectedIndex) {
+            TabView {
                 FeedView()
                     .onTapGesture {
                         selectedIndex = 0
