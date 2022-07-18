@@ -53,7 +53,7 @@ class FeedGridViewModel: ObservableObject {
                             for singleData in bundleData.mainTravelSimpleInfoResponses {
                                 self.travels.append(MainTravel(id: singleData.id, title: singleData.title, mainImagePath: singleData.mainImagePath, likeNum: 1000, createdAt: singleData.createdAt, writerInfo: WriterInfo(id: singleData.writerInfo?.id ?? 1, username: singleData.writerInfo?.username ?? "", nickname: singleData.writerInfo?.nickname ?? "")))
                             }
-                            print("✅ DEBUG on fetchTravels(): \(bundleData)")
+                            print("✅ DEBUG on fetchTravels()")
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchTravels(): \(e)")
                         }
@@ -86,7 +86,7 @@ class FeedGridViewModel: ObservableObject {
                                     self.travels.append(MainTravel(id: singleData.id, title: singleData.title, mainImagePath: singleData.mainImagePath, likeNum: 1000, createdAt: singleData.createdAt, writerInfo: WriterInfo(id: singleData.writerInfo?.id ?? 1, username: singleData.writerInfo?.username ?? "", nickname: singleData.writerInfo?.nickname ?? "")))
                                 }
                             }
-                            print("✅ DEBUG on fetchUserTravels(): \(bundleData)")
+                            print("✅ DEBUG on fetchUserTravels()")
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchUserTravels(): \(e)")
                         }

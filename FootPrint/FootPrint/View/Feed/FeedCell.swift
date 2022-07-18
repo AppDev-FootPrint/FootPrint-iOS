@@ -33,13 +33,15 @@ struct FeedCell: View {
                 .padding([.leading, .top, .bottom], 10)
             
             VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 20)
-                    
-                    Text("\(viewModel.travel.writerInfo?.username ?? "username")")
+                NavigationLink(destination: LazyView(ProfileView(user: User(id: viewModel.travel.writerInfo?.id, username: viewModel.travel.writerInfo?.username ?? "", nickname: viewModel.travel.writerInfo?.nickname)))) {
+                    HStack {
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20)
+                        
+                        Text("\(viewModel.travel.writerInfo?.username ?? "username")")
+                    }
                 }
                 
                 Text("\(viewModel.travel.title ?? "no_name")")

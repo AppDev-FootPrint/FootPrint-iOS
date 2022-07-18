@@ -9,7 +9,7 @@ import SwiftUI
 struct User: Identifiable, Decodable {
     var id: Int?
     var username: String
-    var password: String
+    var password: String?
     var nickname: String?
     var stats: UserStats?
     var accessToken: String?

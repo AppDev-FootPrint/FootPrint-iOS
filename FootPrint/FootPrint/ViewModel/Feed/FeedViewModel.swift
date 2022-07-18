@@ -37,7 +37,7 @@ class FeedViewModel: ObservableObject {
                             for singleData in bundleData.mainTravelSimpleInfoResponses {
                                 self.travels.append(MainTravel(id: singleData.id, title: singleData.title, mainImagePath: singleData.mainImagePath, likeNum: 1000, createdAt: singleData.createdAt, writerInfo: WriterInfo(id: singleData.writerInfo?.id ?? 1, username: singleData.writerInfo?.username ?? "", nickname: singleData.writerInfo?.nickname ?? "")))
                             }
-                            print("✅ DEBUG on fetchAllTravels(): \(bundleData)")
+                            print("✅ DEBUG on fetchAllTravels()")
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchAllTravels(): \(e)")
                         }
