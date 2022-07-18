@@ -10,13 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @State var searchText = ""
     @State var inSearchMode = false
-    
-    enum categories: String, CaseIterable {
-        case Popular
-        case Account
-        case Hashtag
-        case Location
-    }
+    @ObservedObject var viewModel = SearchViewModel() // helps populate view
     
     var body: some View {
         ScrollView {
@@ -24,22 +18,12 @@ struct SearchView: View {
             SearchBar(text: $searchText, isEditing: $inSearchMode)
                 .padding()
             
-            if inSearchMode {
-                HStack {
-                    ForEach(categories.allCases, id: \.rawValue) { category in
-                        CategoryButton(categoryName: category.rawValue)
-                    }
-                }
-                .padding(.bottom)
-            }
-            
-            // grid view/ grid user
+            // grid view/ list of users
             ZStack {
-                // 서치모드면 검색한 유저리스트가 보이도록, 아니면 검색 history 리스트 보여야 함
                 if inSearchMode {
-                    SearchListView()
+                    SearchListView(viewModel: viewModel, searchText: $searchText) // 구현되지않은 부분 
                 } else {
-                    RecentSearchListView()
+                    FeedGridView(config: .explore)
                 }
             }
         }
