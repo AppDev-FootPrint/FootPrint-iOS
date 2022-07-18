@@ -37,14 +37,13 @@ struct LoginView: View {
                             .padding(.bottom, 40)
                     }
                     
-                    
                     VStack {
-                        
                         Text("* LOGIN IS REQUIRED")
                             .font(.system(size: 20, weight: .heavy, design: .serif))
                             .foregroundColor(Color("gray"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 30)
+                        
                         CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person")
                             .padding()
                             .cornerRadius(15)

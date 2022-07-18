@@ -22,12 +22,29 @@ struct RegistrationView: View {
                 .ignoresSafeArea()
             
             VStack {
-                
-                Text("Foot print")
-                    .font(.system(size: 50, weight: .heavy, design: .serif))
-                    .foregroundColor(Color("gray"))
+                HStack {
+                    Text("Foot Print")
+                        .font(.system(size: 50, weight: .heavy, design: .serif))
+                        .foregroundColor(Color("darkgray"))
+                        .frame(alignment: .center)
+                    
+                    Image("footprint")
+                        .resizable()
+                        .renderingMode(.template)
+                        .foregroundColor(Color("darkgray"))
+                        .rotationEffect(.degrees(40))
+                        .scaledToFit()
+                        .frame(width: 60)
+                        .padding(.bottom, 40)
+                }
                 
                 VStack {
+                    Text("* FILL IN ALL THE BLANKS")
+                        .font(.system(size: 20, weight: .heavy, design: .serif))
+                        .foregroundColor(Color("gray"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 30)
+                    
                     CustomTextField(text: $nickname, placeholder: Text("Nickname"), imageName: "face.smiling")
                         .padding()
                         .cornerRadius(15)
