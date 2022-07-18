@@ -26,7 +26,7 @@ struct FeedGridView: View {
         LazyVGrid(columns: items, content: {
             ForEach (viewModel.travels) { travel in
                NavigationLink(
-                destination: FeedCell(viewModel: FeedCellViewModel(travel: travel)),
+                destination: MainTravelView(viewModel: MainTravelViewModel(travel: travel)),
                 label: {
                     Image(systemName: "photo")
                         .resizable()
