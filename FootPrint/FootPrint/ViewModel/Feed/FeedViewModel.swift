@@ -12,10 +12,11 @@ class FeedViewModel: ObservableObject {
     @Published var travels = [MainTravel]()
     
     init() {
-        fetchTravels()
+        fetchAllTravels()
     }
     
-    func fetchTravels() {
+    // 전체 여행 글 조회
+    func fetchAllTravels() {
         guard let user = AuthViewModel.shared.userSession else { return }
         
         let url = "\(Storage().SERVER_URL)/api/main-travels"

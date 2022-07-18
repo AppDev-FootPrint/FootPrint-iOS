@@ -33,6 +33,7 @@
 		BF9E9C502883EA3F0012A9D1 /* MainTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */; };
 		BF9E9C532883EE0F0012A9D1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C522883EE0F0012A9D1 /* FeedViewModel.swift */; };
 		BF9E9C552883EE250012A9D1 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C542883EE250012A9D1 /* FeedCellViewModel.swift */; };
+		BF9E9C59288529700012A9D1 /* FeedGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E9C58288529700012A9D1 /* FeedGridViewModel.swift */; };
 		BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */; };
 		BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC252D02819722C00E7EDDA /* ContentView.swift */; };
 		BFC252D32819722E00E7EDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC252D22819722E00E7EDDA /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		BF9E9C4F2883EA3F0012A9D1 /* MainTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTravel.swift; sourceTree = "<group>"; };
 		BF9E9C522883EE0F0012A9D1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		BF9E9C542883EE250012A9D1 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
+		BF9E9C58288529700012A9D1 /* FeedGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGridViewModel.swift; sourceTree = "<group>"; };
 		BFC252CB2819722C00E7EDDA /* FootPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC252CE2819722C00E7EDDA /* FootPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootPrintApp.swift; sourceTree = "<group>"; };
 		BFC252D02819722C00E7EDDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				BF9E9C522883EE0F0012A9D1 /* FeedViewModel.swift */,
 				BF9E9C542883EE250012A9D1 /* FeedCellViewModel.swift */,
+				BF9E9C58288529700012A9D1 /* FeedGridViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				BFC252D12819722C00E7EDDA /* ContentView.swift in Sources */,
 				BFC252CF2819722C00E7EDDA /* FootPrintApp.swift in Sources */,
 				BF9E9C412883CF040012A9D1 /* DetailTravel.swift in Sources */,
+				BF9E9C59288529700012A9D1 /* FeedGridViewModel.swift in Sources */,
 				BF7DA94928290EE3008FE410 /* CustomTextField.swift in Sources */,
 				BF9C2B62282A6E81007E6543 /* CustomSecureField.swift in Sources */,
 				BFFE6F1C281EDCA2001B309C /* LocationCell.swift in Sources */,

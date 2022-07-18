@@ -14,13 +14,19 @@ struct FeedGridView: View {
     private let items = [GridItem(), GridItem()]
     private let width = UIScreen.main.bounds.width / 2
     
-    @ObservedObject var viewModel : FeedViewModel
+    let config: FeedGridConfiguration
+    @ObservedObject var viewModel : FeedGridViewModel
+    
+    init(config: FeedGridConfiguration) {
+        self.config = config
+        self.viewModel = FeedGridViewModel(config: config)
+    }
    
     var body: some View {
         LazyVGrid(columns: items, content: {
             ForEach (viewModel.travels) { travel in
                NavigationLink(
-                destination: MainTravelView(viewModel: MainTravelViewModel(travel: travel)),
+                destination: FeedCell(viewModel: FeedCellViewModel(travel: travel)),
                 label: {
                     Image(systemName: "photo")
                         .resizable()

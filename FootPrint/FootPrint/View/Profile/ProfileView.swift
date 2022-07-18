@@ -21,7 +21,7 @@ struct ProfileView: View {
             ScrollView {
                 VStack {
                     ProfileHeaderView(viewModel: viewModel)
-                    FeedGridView(viewModel: FeedViewModel())
+                    FeedGridView(config: .profile(user.id ?? 0))
                     Spacer()
                 }
         }
