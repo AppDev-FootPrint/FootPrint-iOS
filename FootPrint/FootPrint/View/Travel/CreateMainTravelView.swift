@@ -13,7 +13,7 @@ struct CreateMainTravelView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State var title: String = ""
-    @State private var isPrivate: Bool = false
+    @State private var isVisible: Bool = true
     
     @ObservedObject var viewModel = MainTravelViewModel(travel: MainTravel(likeNum: 0))
     @State var showToast = false // 게시글 등록 완룔 메시지
@@ -42,9 +42,9 @@ struct CreateMainTravelView: View {
         
                 // default: 공개 게시글
                 Button(action: {
-                    isPrivate.toggle()
+                    isVisible.toggle()
                 }, label: {
-                    Image(systemName: isPrivate ? "lock" : "lock.open")
+                    Image(systemName: isVisible ? "lock.open" : "lock")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20)
@@ -65,7 +65,7 @@ struct CreateMainTravelView: View {
                     if title.count == 0 {
                         showWarning = true
                     } else {
-                        viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isPrivate, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
+                        viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isVisible, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
                     }
                 }, label: {
                     Text("Apply")
