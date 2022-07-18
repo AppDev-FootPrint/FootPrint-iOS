@@ -18,12 +18,12 @@ struct ProfileView: View {
     }
     
     var body: some View {
-            ScrollView {
-                VStack {
-                    ProfileHeaderView(viewModel: viewModel)
-                    FeedGridView(config: .profile(user.id ?? 0))
-                    Spacer()
-                }
+        ScrollView {
+            VStack {
+                ProfileHeaderView(viewModel: viewModel)
+                FeedGridView(config: .profile(user.id ?? 0))
+                Spacer()
+            }
         }
     }
 }

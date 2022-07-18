@@ -22,7 +22,6 @@ struct NotificationCell: View {
             Image(systemName: "square")
                 .resizable()
                 .frame(width: 50, height: 50)
-            
         }
     }
 }

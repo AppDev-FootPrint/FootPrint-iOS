@@ -27,7 +27,6 @@ struct LocationCell: View {
                 Text(locationAddress)
                     .font(.system(size: 14))
             }
-            
             Spacer()
         }
     }

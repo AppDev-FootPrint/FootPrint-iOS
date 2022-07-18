@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchBar: View {
+    
     @Binding var text: String
     @Binding var isEditing: Bool
     
@@ -40,7 +41,7 @@ struct SearchBar: View {
                 })
                 .onTapGesture {
                     isEditing = true
-                }
+            }
         }
     }
 }

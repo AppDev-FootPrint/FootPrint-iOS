@@ -14,6 +14,7 @@ struct DetailTravelView: View {
 
     @State var isHeartClicked: Bool = false
     @State var isClipped: Bool = false
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -127,7 +128,6 @@ struct DetailTravelView: View {
                     Spacer()
                 }
                 .padding()
-                
             }
             .padding(.top)
         }

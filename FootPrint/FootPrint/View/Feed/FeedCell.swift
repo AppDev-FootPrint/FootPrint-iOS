@@ -10,9 +10,8 @@ import SwiftUI
 
 struct FeedCell: View {
     
-    @ObservedObject var viewModel: FeedCellViewModel
-
     @State var isClipped: Bool = false
+    @ObservedObject var viewModel: FeedCellViewModel
     
     var didLike: Bool { return viewModel.travel.didLike ?? false }
     var numberOfLike: Int { return viewModel.travel.likeNum ?? 1_000 }
@@ -59,7 +58,6 @@ struct FeedCell: View {
                                 .frame(width: 25)
                                 .foregroundColor(didLike ? .red : .black)
                         })
-
                         
                         if numberOfLike > 999 {
                             Text("999+")
@@ -77,7 +75,6 @@ struct FeedCell: View {
                             .scaledToFit()
                             .frame(height: 25)
                             .onTapGesture {
-                                
                             }
                         
                         if numberOfComment > 999 {

@@ -81,7 +81,6 @@ struct CreateMainTravelView: View {
                     }
                 })
             }
-            
             Spacer()
         }
         .popup(isPresented: $showToast, type: .floater(), position: .bottom, autohideIn: 1.5) {

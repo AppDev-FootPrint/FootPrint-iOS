@@ -74,8 +74,6 @@ class ProfileViewModel: ObservableObject {
     func checkIfUserIsFollowed() {
         guard !user.isCurrentUser else { return } // can't follow oneself
         guard let uid = user.id else { return }
-        
-        
     }
     
     func fetchUserStats() {

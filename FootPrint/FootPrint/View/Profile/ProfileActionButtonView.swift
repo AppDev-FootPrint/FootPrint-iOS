@@ -37,7 +37,6 @@ struct ProfileActionButtonView: View {
                     HStack {
                         Image(systemName: "gearshape")
                         Text("Settings")
-                            
                     }
                     .font(.system(size: 14, weight: .semibold))
                     .frame(width: 170, height: 32)
@@ -48,20 +47,22 @@ struct ProfileActionButtonView: View {
                     )
                 })
             }
-
         } else {
             HStack {
                 // 현재 로그인한 유저가 아닌 다른 유저의 프로필이하면 shows buttons for follow and messeage
-                Button(action: { isFollowed ? viewModel.unfollow() : viewModel.follow() }, label: {
-                        Text(isFollowed ? "Following" : "Follow") // 삼항연산 사용
-                            .font(.system(size: 14, weight: .semibold))
-                            .frame(width: self.width, height: 32)
-                            .foregroundColor(isFollowed ? .black : .white)
-                            .background(isFollowed ? Color.white : Color.blue)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 3)
-                                    .stroke(Color.gray, lineWidth: isFollowed ? 1 : 0)
-                            )
+                Button(action: {
+                    isFollowed ? viewModel.unfollow() : viewModel.follow()
+                    
+                }, label: {
+                    Text(isFollowed ? "Following" : "Follow") // 삼항연산 사용
+                        .font(.system(size: 14, weight: .semibold))
+                        .frame(width: self.width, height: 32)
+                        .foregroundColor(isFollowed ? .black : .white)
+                        .background(isFollowed ? Color.white : Color.blue)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.gray, lineWidth: isFollowed ? 1 : 0)
+                        )
                     }).cornerRadius(3)
                 
                 Button(action: {}, label: {
@@ -72,7 +73,7 @@ struct ProfileActionButtonView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 3)
                                 .stroke(Color.gray, lineWidth: 1)
-                        )
+                    )
                 })
             }
         }

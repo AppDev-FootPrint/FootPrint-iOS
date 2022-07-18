@@ -15,8 +15,9 @@ struct UserStatView: View {
         VStack {
             Text("\(value)")
                 .font(.system(size: 15, weight: .semibold))
-            Text(title)
+            Text("\(title)")
                 .font(.system(size: 15)).frame(width: 80, alignment: .center)
-        }.frame(width: 80, alignment: .center) // 요소 간 스태틱한 width를 부여
+        }
+        .frame(width: 80, alignment: .center) // 요소 간 스태틱한 width를 부여
     }
 }

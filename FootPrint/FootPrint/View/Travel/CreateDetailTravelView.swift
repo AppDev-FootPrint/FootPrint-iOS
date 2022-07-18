@@ -21,7 +21,6 @@ struct CreateDetailTravelView: View {
     
     var body: some View {
         VStack {
-            
             HStack {
                 Spacer()
                 
@@ -45,7 +44,6 @@ struct CreateDetailTravelView: View {
             .padding(.trailing, 20)
             
             ScrollView {
-                
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .padding(.leading)
@@ -82,7 +80,6 @@ struct CreateDetailTravelView: View {
                                     .background(Color.gray)
                                     .cornerRadius(10)
                                     .padding(7)
-                                
                             } else {
                                 Button(action: {imagePickerPresented.toggle()}, label: {
                                     Image(systemName: "plus")
@@ -171,13 +168,11 @@ struct CreateDetailTravelView: View {
                                     .foregroundColor(.gray)
                         )
                 })
-                
                 // 생성 후 아이템 추가 코드 구현 
             }
         }
     }
 }
-
 
 extension CreateDetailTravelView {
     func loadImage() {
@@ -185,7 +180,6 @@ extension CreateDetailTravelView {
         image = Image(uiImage: selectedImage)
     }
 }
-
 
 struct CreateDetailTravelView_Previews: PreviewProvider {
     static var previews: some View {

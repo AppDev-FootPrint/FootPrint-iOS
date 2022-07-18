@@ -34,7 +34,8 @@ struct SecuritySettingView: View {
                 if newPW == confirmPW {
                     HStack {
                         Image(systemName: "checkmark.circle.fill")
-                                        .foregroundColor(.green)
+                            .foregroundColor(.green)
+                        
                         Text("Confirm!")
                             .foregroundColor(.green)
                         
@@ -44,7 +45,8 @@ struct SecuritySettingView: View {
                 } else {
                     HStack {
                         Image(systemName: "xmark.circle.fill")
-                                        .foregroundColor(.red)
+                            .foregroundColor(.red)
+                        
                         Text("Incorrect!")
                             .foregroundColor(.red)
                         
