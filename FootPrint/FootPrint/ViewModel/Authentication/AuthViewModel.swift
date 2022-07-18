@@ -35,7 +35,6 @@ class AuthViewModel: ObservableObject {
         }
         
         AF.request(request).responseString { (response) in
-            print("DEBUG on register() : \(response.response)")
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on register() : ✅ success to register")
             } else {
@@ -64,7 +63,6 @@ class AuthViewModel: ObservableObject {
         }
         
         AF.request(request).responseString { (response) in
-            print("DEBUG on login() : \(response.response)")
             if response.response?.statusCode == 200 { // OK
                 guard let accessToken = response.response?.allHeaderFields["Authorization"] else { return }
                 
