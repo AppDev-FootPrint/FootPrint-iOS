@@ -52,7 +52,6 @@ struct ProfileActionButtonView: View {
                 // 현재 로그인한 유저가 아닌 다른 유저의 프로필이하면 shows buttons for follow and messeage
                 Button(action: {
                     isFollowed ? viewModel.unfollow() : viewModel.follow()
-                    
                 }, label: {
                     Text(isFollowed ? "Following" : "Follow") // 삼항연산 사용
                         .font(.system(size: 14, weight: .semibold))

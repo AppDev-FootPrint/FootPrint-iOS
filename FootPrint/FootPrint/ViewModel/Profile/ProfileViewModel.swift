@@ -20,13 +20,12 @@ class ProfileViewModel: ObservableObject {
     func follow() {
         guard let uid = user.id else { return } // 현재 보고있는 프로필뷰의 대상 유저 (followee)
         guard let currentUser = AuthViewModel.shared.userSession else { return } // 현재 로그인한 유저 정보 (follower)
-        
-        let url = "\(Storage().SERVER_URL)/api/follows/\(uid)/to/\(String(describing: currentUser.id))"
+        let url = "\(Storage().SERVER_URL)/api/follows/\(uid)/to/\(currentUser.id!)"
         
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("\(user.accessToken ?? "no_value")", forHTTPHeaderField: "Authorization")
+        request.setValue("\(currentUser.accessToken ?? "no_value")", forHTTPHeaderField: "Authorization")
         request.timeoutInterval = 10
 
         // httpBody 에 parameters 추가
@@ -37,7 +36,6 @@ class ProfileViewModel: ObservableObject {
         }
         
         AF.request(request).responseString { (response) in
-            print("DEBUG on follow() : \(String(describing: response.response))")
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on follow() : ✅ success! Now \(String(describing: currentUser.username)) follows \(self.user.username)")
                 self.user.isFollowed = true
@@ -51,12 +49,12 @@ class ProfileViewModel: ObservableObject {
         guard let uid = user.id else { return } // 현재 보고있는 프로필뷰의 대상 유저 (followee)
         guard let currentUser = AuthViewModel.shared.userSession else { return } // 현재 로그인한 유저 정보 (follower)
         
-        let url = "\(Storage().SERVER_URL)/api/follows/\(uid)/to/\(String(describing: currentUser.id))"
+        let url = "\(Storage().SERVER_URL)/api/follows/\(uid)/to/\(currentUser.id!)"
         
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "DELETE"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("\(user.accessToken ?? "no_permission")", forHTTPHeaderField: "Authorization")
+        request.setValue("\(currentUser.accessToken ?? "no_permission")", forHTTPHeaderField: "Authorization")
         
         AF.request(request)
             .validate(statusCode: 200..<300)
@@ -74,15 +72,48 @@ class ProfileViewModel: ObservableObject {
     func checkIfUserIsFollowed() {
         guard !user.isCurrentUser else { return } // can't follow oneself
         guard let uid = user.id else { return }
+        guard let currentUser = AuthViewModel.shared.userSession else { return }
+        
+        let requestHeaders: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json", "Authorization": String(currentUser.accessToken ?? "no_permission")]
+        
+        var url = "\(Storage().SERVER_URL)/api/members/\(currentUser.id!)/follower"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: URLEncoding.default,
+                       headers: requestHeaders)
+                .validate(statusCode: 200..<300)
+                .responseString { (response) in
+                    switch response.result {
+                    case .success(let body) : // if response.response.statuscode == 200
+                        let json = body.data(using: .utf8)!
+                        do {
+                            let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
+                            for singleData in bundleData {
+                                if singleData.followerNickname == self.user.nickname {
+                                    self.user.isFollowed = true
+                                }
+                            }
+                            print("✅ DEBUG on checkIfUserIsFollowed()")
+                        } catch (let e) {
+                            print("⚠️ DEBUG on checkIfUserIsFollowed(): \(e)")
+                        }
+                    case .failure :
+                        print("🚫 DEBUG on checkIfUserIsFollowed(): \(response.result)")
+            }
+        }
+        
     }
     
     func fetchUserStats() {
         guard let uid = user.id else { return }
+        guard let currentUser = AuthViewModel.shared.userSession else { return }
+        
         var posts: Int = 0
         var followers: Int = 0
         var followings: Int = 0
         
-        let requestHeaders: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json", "Authorization": String(user.accessToken ?? "no_permission")]
+        let requestHeaders: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json", "Authorization": String(currentUser.accessToken ?? "no_permission")]
         
         var url = "\(Storage().SERVER_URL)/api/members/\(uid)/follower"
             AF.request(url,
@@ -99,7 +130,7 @@ class ProfileViewModel: ObservableObject {
                             let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
 //                            for singleData in bundleData {
 //                            }
-                            followers = bundleData.count
+                            followings = bundleData.count
                             print("✅ DEBUG on fetchUserStats(): \(bundleData.count)")
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchUserStats(): \(e)")
@@ -122,7 +153,7 @@ class ProfileViewModel: ObservableObject {
                         let json = body.data(using: .utf8)!
                         do {
                             let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
-                            followings = bundleData.count
+                            followers = bundleData.count
                             print("✅ DEBUG on fetchUserStats(): \(bundleData.count)")
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchUserStats(): \(e)")
@@ -157,7 +188,6 @@ class ProfileViewModel: ObservableObject {
                             print("✅ DEBUG on fetchUserStats(): \(bundleData.total)")
                             
                             self.user.stats = UserStats(following: followings, posts: posts, followers: followers)
-                            print("here::: \(self.user.stats)")
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchUserStats(): \(e)")
                         }
