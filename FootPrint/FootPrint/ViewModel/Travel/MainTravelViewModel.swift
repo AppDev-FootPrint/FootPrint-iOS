@@ -18,6 +18,43 @@ class MainTravelViewModel: ObservableObject {
         self.travel = travel
     }
     
+    func fetchMainTravel(id: Int) {
+        guard let user = AuthViewModel.shared.userSession else { return }
+        
+        let url = "\(Storage().SERVER_URL)/api/main-travels\(id)"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: URLEncoding.default,
+                       headers: ["Content-Type":"application/json", "Accept":"application/json", "Authorization": String(user.accessToken ?? "no_permission")])
+                .validate(statusCode: 200..<300)
+                .responseString { (response) in
+                    switch response.result {
+                    case .success(let travel) :
+                        let json = travel.data(using: .utf8)!
+                        do {
+                            let data = try JSONDecoder().decode(MainTravel.self, from: json)
+                            self.travel.startDate = data.startDate
+                            self.travel.endDate = data.endDate
+                            self.travel.isVisible = data.isVisible
+                            self.travel.isCompleted = data.isCompleted
+                            self.travel.mainImagePath = data.mainImagePath
+                            self.travel.createDetailTravelRequest = data.createDetailTravelRequest
+                            self.travel.likeNum = data.likeNum
+                            self.travel.createdAt = data.createdAt
+                            let writer = data.writerInfo
+                            self.travel.writerInfo = WriterInfo(id: writer?.id ?? 0, username: writer?.username ?? "", nickname: writer?.nickname ?? "")
+                            self.travel.didLike = data.didLike
+                            print("✅ DEBUG on fetchMainTravel()")
+                        } catch (let e) {
+                            print("⚠️ DEBUG on fetchMainTravel(): \(e)")
+                        }
+                    case .failure :
+                        print("🚫 DEBUG on fetchMainTravel(): \(response.result)")
+            }
+        }
+    }
+    
     func createMainTravel(title: String, startDate: String, endDate: String, isVisible: Bool, isCompleted: Bool, mainImagePath: String) {
         guard let user = AuthViewModel.shared.userSession else { return }
         
