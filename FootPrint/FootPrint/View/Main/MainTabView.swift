@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     let user: User
     @Binding var selectedIndex: Int
+    @State private var editorMode: Bool = false
     
     var body: some View {
         NavigationView {
@@ -30,7 +31,7 @@ struct MainTabView: View {
                         Image(systemName: "magnifyingglass")
                     }.tag(1)
                 
-                MainTravelEditorView(editingMode: false)
+                MainTravelEditorView(editingMode: $editorMode, viewModel: MainTravelViewModel(travel: MainTravel()))
                     .onTapGesture {
                         selectedIndex = 2
                     }

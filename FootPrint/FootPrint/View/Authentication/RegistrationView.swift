@@ -21,7 +21,7 @@ struct RegistrationView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color("lightgray")], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color("bgcolor")], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             VStack {

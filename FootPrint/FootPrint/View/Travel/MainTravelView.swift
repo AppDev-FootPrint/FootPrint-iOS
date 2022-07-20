@@ -10,7 +10,6 @@ import SwiftUI
 import PopupView
 
 struct MainTravelView: View {
-    
     @State private var travelTitle: String = "TRAVEL TITLE"
     var userState : Bool { // 로그인한 계정의 travel이라면 true
         if viewModel.travel.writerInfo?.id == AuthViewModel.shared.userSession?.id {
@@ -89,10 +88,28 @@ struct MainTravelView: View {
                 })
             }
         }
-        .popup(isPresented: $editorMode, view: {
-            MainTravelEditorView(editingMode: true)
-                .background(Color("lightgray"))
-        })
+        .popup(isPresented: $editorMode, type: .floater(), position: .bottom, closeOnTap: false, backgroundColor: Color.secondary) {
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        self.editorMode = false
+                    }, label: {
+                        Image(systemName: "x.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    })
+                    .foregroundColor(.white)
+                    .padding([.top, .trailing])
+                }
+                
+                LazyView(MainTravelEditorView(editingMode: $editorMode, viewModel: viewModel))
+            }
+            .frame(width: UIScreen.main.bounds.width - 30, height: 330)
+            .background(Color("lightgray"))
+            .cornerRadius(30.0)
+        }
         .onReceive(viewModel.$deleted, perform: { completed in
             if completed {
                 self.mode.wrappedValue.dismiss()

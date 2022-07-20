@@ -15,26 +15,38 @@ struct MainTravelEditorView: View {
     @State var title: String = ""
     @State private var isVisible: Bool = true
     
-    @State var editingMode: Bool // true: create, false: update
-    @ObservedObject var viewModel = MainTravelViewModel(travel: MainTravel(likeNum: 0))
+    @Binding var editingMode: Bool // true: create, false: update
+    @ObservedObject var viewModel : MainTravelViewModel
     @State var showToast = false // 게시글 등록 완룔 메시지
     @State var showWarning = false // 제목 입력 X시
+    
+    init(editingMode: Binding<Bool>, viewModel: MainTravelViewModel) {
+        self._editingMode = editingMode
+        self.viewModel = viewModel
+        
+        if _editingMode.wrappedValue {
+            title = viewModel.travel.title!
+            // 빈칸이면 등록할 수 없도록 예외처리했으므로 강제언래핑
+        }
+    }
     
     var body: some View {
         VStack {
             HStack {
                 Text("Travel Title")
                     .font(.system(size: 15, weight: .semibold))
-                    .padding([.leading, .top, .bottom])
+                    .padding([.leading, .bottom])
                 
-                TextField("Enter the title", text: $title)
-                    .padding()
+                TextField(editingMode ? "\(viewModel.travel.title!)" : "Enter the title", text: $title)
+                    .padding([[.leading, .trailing, .bottom]])
             }
             .padding(.top)
             
             DatePicker("Start Date", selection: $startDate, displayedComponents: [.date])
+                .font(.system(size: 15, weight: .semibold))
                 .padding()
             DatePicker("End Date", selection: $endDate, displayedComponents: [.date])
+                .font(.system(size: 15, weight: .semibold))
                 .padding()
             
             HStack {
@@ -84,7 +96,7 @@ struct MainTravelEditorView: View {
             }
             Spacer()
         }
-        .popup(isPresented: $showToast, type: .floater(), position: .bottom, autohideIn: 1.5) {
+        .popup(isPresented: $showToast, type: .toast, position: .bottom, autohideIn: 1.5) {
             Text("새 여행 등록 완료 :)")
                 .frame(width: 200, height: 60)
                 .foregroundColor(.white)
