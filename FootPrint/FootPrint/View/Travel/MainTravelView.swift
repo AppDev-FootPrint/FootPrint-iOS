@@ -11,7 +11,12 @@ import SwiftUI
 struct MainTravelView: View {
     
     @State private var travelTitle: String = "TRAVEL TITLE"
-    @State private var userState : Bool = true // 로그인한 계정의 travel이라면 true
+    var userState : Bool { // 로그인한 계정의 travel이라면 true
+        if viewModel.travel.writerInfo?.id == AuthViewModel.shared.userSession?.id {
+            return true
+        }
+        return false
+    }
     @State private var clipped: Bool = true // 여행을 따로 저장? 디폴트는 false (저장하지 않은 상태)
     
     @ObservedObject var viewModel : MainTravelViewModel
@@ -29,8 +34,10 @@ struct MainTravelView: View {
                 if !userState { // 사용자의 여행글이 아닌 다른 사람의 게시글인 경우 
                     if !clipped { // 스크랩하지 않은 경우
                         Image(systemName: "bookmark")
+                            .padding(.trailing, 20)
                     } else { // 스크랩한 경우
                         Image(systemName: "bookmark.fill")
+                            .padding(.trailing, 20)
                     }
                 } else { // 사용자 본인의 글인 경우
                     Menu(content: {
