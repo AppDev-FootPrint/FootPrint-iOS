@@ -37,7 +37,7 @@ struct MainTravelEditorView: View {
                     .font(.system(size: 15, weight: .semibold))
                     .padding([.leading, .bottom])
                 
-                TextField(editingMode ? "\(viewModel.travel.title!)" : "Enter the title", text: $title)
+                TextField(editingMode ? "\(viewModel.travel.title ?? "")" : "Enter the title", text: $title)
                     .padding([[.leading, .trailing, .bottom]])
             }
             .padding(.top)
@@ -76,9 +76,18 @@ struct MainTravelEditorView: View {
                 // 새 여행 피드가 생성된 프로필 뷰로 전환
                 Button(action: {
                     if title.count == 0 {
-                        showWarning = true
+                        if editingMode {
+                            self.title = viewModel.travel.title!
+                        } else {
+                            showWarning = true
+                        }
                     } else {
-                        viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isVisible, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
+                        if editingMode {
+                            let travel = viewModel.travel
+                            viewModel.modifyTravel(travelId: travel.id!, title: self.title, startDate: Date2String(date: self.startDate), endDate: Date2String(date: self.endDate), isVisible: self.isVisible, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))", createdAt: travel.createdAt ?? "", writerInfo: WriterInfo(id: travel.writerInfo?.id ?? 0, username: travel.writerInfo?.username ?? "", nickname: travel.writerInfo?.nickname ?? ""), didLike: travel.didLike ?? false)
+                        } else {
+                            viewModel.createMainTravel(title: title, startDate: Date2String(date: startDate), endDate: Date2String(date: endDate), isVisible: isVisible, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))")
+                        }
                     }
                 }, label: {
                     Text("Apply")
@@ -98,7 +107,7 @@ struct MainTravelEditorView: View {
         }
         .popup(isPresented: $showToast, type: .toast, position: .bottom, autohideIn: 1.5) {
             Text("새 여행 등록 완료 :)")
-                .frame(width: 200, height: 60)
+                .frame(width: editingMode ? 150 : 200, height: 60)
                 .foregroundColor(.white)
                 .background(Color("blue"))
                 .cornerRadius(30.0)
@@ -110,6 +119,15 @@ struct MainTravelEditorView: View {
                 .background(Color("red"))
                 .cornerRadius(30.0)
                 .multilineTextAlignment(.center)
+        }
+        .onAppear {
+            if editingMode {
+                viewModel.fetchMainTravel(id: viewModel.travel.id!) { completion in
+                    startDate = String2Date(date: viewModel.travel.startDate!)
+                    endDate = String2Date(date: viewModel.travel.endDate!)
+                    isVisible = viewModel.travel.isVisible!
+                }
+            }
         }
     }
 }

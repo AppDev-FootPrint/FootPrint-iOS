@@ -12,16 +12,17 @@ class MainTravelViewModel: ObservableObject {
     
     @Published var created = false
     @Published var deleted = false
+    @Published var updated = false
     @Published var travel: MainTravel
     
     init(travel: MainTravel) {
         self.travel = travel
     }
     
-    func fetchMainTravel(id: Int) {
+    func fetchMainTravel(id: Int, completion: @escaping(_ data: MainTravel) -> Void) {
         guard let user = AuthViewModel.shared.userSession else { return }
         
-        let url = "\(Storage().SERVER_URL)/api/main-travels\(id)"
+        let url = "\(Storage().SERVER_URL)/api/main-travels/\(id)"
             AF.request(url,
                        method: .get,
                        parameters: nil,
@@ -30,7 +31,7 @@ class MainTravelViewModel: ObservableObject {
                 .validate(statusCode: 200..<300)
                 .responseString { (response) in
                     switch response.result {
-                    case .success(let travel) :
+                    case .success(let travel) : // statueCode == 201 OK
                         let json = travel.data(using: .utf8)!
                         do {
                             let data = try JSONDecoder().decode(MainTravel.self, from: json)
@@ -45,7 +46,9 @@ class MainTravelViewModel: ObservableObject {
                             let writer = data.writerInfo
                             self.travel.writerInfo = WriterInfo(id: writer?.id ?? 0, username: writer?.username ?? "", nickname: writer?.nickname ?? "")
                             self.travel.didLike = data.didLike
-                            print("✅ DEBUG on fetchMainTravel()")
+                            print("✅ DEBUG on fetchMainTravel() \(self.travel)")
+                            
+                            completion(self.travel)
                         } catch (let e) {
                             print("⚠️ DEBUG on fetchMainTravel(): \(e)")
                         }
@@ -101,7 +104,7 @@ class MainTravelViewModel: ObservableObject {
         }
     }
     
-    func modifyTravel(travelId: Int, title: String, startDate: String, endDate: String, isVisible: Bool, isCompleted: Bool, mainImagePath: String) {
+    func modifyTravel(travelId: Int, title: String, startDate: String, endDate: String, isVisible: Bool, isCompleted: Bool, mainImagePath: String, createdAt: String, writerInfo: WriterInfo, didLike: Bool) {
         guard let user = AuthViewModel.shared.userSession else { return }
         
         let url = "\(Storage().SERVER_URL)/api/main-travels/\(travelId)"
@@ -128,6 +131,8 @@ class MainTravelViewModel: ObservableObject {
             .validate(statusCode: 200..<300)
             .responseString { (response) in
                 if response.response?.statusCode == 200 {
+                    self.updated = true
+                    self.travel = MainTravel(id: travelId, title: title, startDate: startDate, endDate: endDate, isVisible: isVisible, isCompleted: true, mainImagePath: mainImagePath, createDetailTravelRequest: [], likeNum: 1000, commentCount: 0, createdAt: createdAt, writerInfo: writerInfo, didLike: didLike)
                     print("✅ DEBUG on modifyTravel(): \(response.result)")
                 } else {
                     print("🚫 DEBUG on modifyTravel(): \(response.result)")

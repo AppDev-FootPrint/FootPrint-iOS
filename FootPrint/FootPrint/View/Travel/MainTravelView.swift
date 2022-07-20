@@ -10,7 +10,9 @@ import SwiftUI
 import PopupView
 
 struct MainTravelView: View {
-    @State private var travelTitle: String = "TRAVEL TITLE"
+    var travelTitle: String {
+        return viewModel.travel.title!
+    }
     var userState : Bool { // 로그인한 계정의 travel이라면 true
         if viewModel.travel.writerInfo?.id == AuthViewModel.shared.userSession?.id {
             return true
@@ -113,6 +115,11 @@ struct MainTravelView: View {
         .onReceive(viewModel.$deleted, perform: { completed in
             if completed {
                 self.mode.wrappedValue.dismiss()
+            }
+        })
+        .onReceive(viewModel.$updated, perform: { completed in
+            if completed {
+                self.editorMode = false
             }
         })
     }
