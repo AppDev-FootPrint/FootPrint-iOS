@@ -20,7 +20,8 @@ struct UserCell: View {
                 .clipShape(Circle())
             
             Text("\(user)")
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: 15, weight: .semibold))
+                .padding(.leading, 10)
             
             Spacer()
         }

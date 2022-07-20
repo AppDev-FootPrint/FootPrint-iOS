@@ -16,7 +16,7 @@ struct UserListView: View {
             LazyVStack {
                 ForEach(users, id:\.self) { user in
                     UserCell(user: user)
-                        .padding(.leading)
+                        .padding([.leading, .top])
                 }
             }
         }
