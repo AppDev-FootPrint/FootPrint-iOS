@@ -86,7 +86,6 @@ class MainTravelViewModel: ObservableObject {
         }
         
         AF.request(request).responseString { (response) in
-            print("DEBUG on createMainTravel() : \(String(describing: response.response))")
             if response.response?.statusCode == 201 { // Created
                 print("DEBUG on createMainTravel() : ✅ success to create main travel")
                 self.created = true

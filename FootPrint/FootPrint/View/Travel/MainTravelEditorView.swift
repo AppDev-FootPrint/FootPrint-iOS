@@ -18,7 +18,8 @@ struct MainTravelEditorView: View {
     @Binding var editingMode: Bool // true: create, false: update
     @ObservedObject var viewModel : MainTravelViewModel
     @State var showToast = false // 게시글 등록 완룔 메시지
-    @State var showWarning = false // 제목 입력 X시
+    @State var showTitleWarning = false // 제목 입력 X시 true
+    @State var showDateWarning = false // 날짜가 startDate > endDate시 true
     
     init(editingMode: Binding<Bool>, viewModel: MainTravelViewModel) {
         self._editingMode = editingMode
@@ -79,9 +80,12 @@ struct MainTravelEditorView: View {
                         if editingMode {
                             self.title = viewModel.travel.title!
                         } else {
-                            showWarning = true
+                            showTitleWarning = true
                         }
-                    } else {
+                    } else if startDate > endDate {
+                        showDateWarning = true
+                    }
+                    else {
                         if editingMode {
                             let travel = viewModel.travel
                             viewModel.modifyTravel(travelId: travel.id!, title: self.title, startDate: Date2String(date: self.startDate), endDate: Date2String(date: self.endDate), isVisible: self.isVisible, isCompleted: true, mainImagePath: "no_path\(Int.random(in: 0...1000))", createdAt: travel.createdAt ?? "", writerInfo: WriterInfo(id: travel.writerInfo?.id ?? 0, username: travel.writerInfo?.username ?? "", nickname: travel.writerInfo?.nickname ?? ""), didLike: travel.didLike ?? false)
@@ -99,22 +103,31 @@ struct MainTravelEditorView: View {
                 })
                 .onReceive(viewModel.$created, perform: { completed in
                     if completed {
+                        print(completed)
                         showToast = true
                     }
                 })
             }
             Spacer()
         }
-        .popup(isPresented: $showToast, type: .toast, position: .bottom, autohideIn: 1.5) {
+        .popup(isPresented: $showToast, type: .floater(), position: .bottom, autohideIn: 1.5) {
             Text("새 여행 등록 완료 :)")
                 .frame(width: editingMode ? 150 : 200, height: 60)
                 .foregroundColor(.white)
                 .background(Color("blue"))
                 .cornerRadius(30.0)
         }
-        .popup(isPresented: $showWarning, type: .floater(), position: .bottom, autohideIn: 1.5) {
+        .popup(isPresented: $showTitleWarning, type: .floater(), position: .bottom, autohideIn: 1.5) {
             Text("등록 실패!\n 제목을 입력해주세요 :(")
                 .frame(width: 200, height: 60)
+                .foregroundColor(.white)
+                .background(Color("red"))
+                .cornerRadius(30.0)
+                .multilineTextAlignment(.center)
+        }
+        .popup(isPresented: $showDateWarning, type: .floater(), position: .bottom, autohideIn: 1.5) {
+            Text("등록 실패!\n 시작 날짜가 종료 날짜 이전이어야 해요 :(")
+                .frame(width: 320, height: 60)
                 .foregroundColor(.white)
                 .background(Color("red"))
                 .cornerRadius(30.0)
