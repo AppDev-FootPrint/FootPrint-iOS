@@ -81,7 +81,7 @@ struct MainTravelView: View {
                     })
                 }
                 
-                NavigationLink(destination: CreateDetailTravelView(numberOfPriceInfo: 0, numberOfTipInfo: 0), label: {
+                NavigationLink(destination: DetailTravelEditorView(numberOfPriceInfo: 0, numberOfTipInfo: 0), label: {
                     Image(systemName: "plus")
                         .foregroundColor(.white)
                         .padding()
