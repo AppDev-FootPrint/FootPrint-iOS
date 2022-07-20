@@ -7,6 +7,7 @@
 // figma : Travel_infos
 
 import SwiftUI
+import PopupView
 
 struct MainTravelView: View {
     
@@ -18,6 +19,7 @@ struct MainTravelView: View {
         return false
     }
     @State private var clipped: Bool = true // 여행을 따로 저장? 디폴트는 false (저장하지 않은 상태)
+    @State private var editorMode: Bool = false // main travel 수정을 위한 뷰에 대한 모드
     
     @ObservedObject var viewModel : MainTravelViewModel
     @Environment(\.presentationMode) var mode
@@ -41,9 +43,11 @@ struct MainTravelView: View {
                     }
                 } else { // 사용자 본인의 글인 경우
                     Menu(content: {
-                        Button(action: {}, label: {
-                            Label("Modify", systemImage: "pencil")
-                        })
+                            Button(action: {
+                                self.editorMode = true
+                            }, label: {
+                                Label("Modify", systemImage: "pencil")
+                            })
 
                         Button(action: {
                             guard let travelId = viewModel.travel.id else { return }
@@ -85,6 +89,10 @@ struct MainTravelView: View {
                 })
             }
         }
+        .popup(isPresented: $editorMode, view: {
+            MainTravelEditorView(editingMode: true)
+                .background(Color("lightgray"))
+        })
         .onReceive(viewModel.$deleted, perform: { completed in
             if completed {
                 self.mode.wrappedValue.dismiss()

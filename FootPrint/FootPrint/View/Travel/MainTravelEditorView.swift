@@ -8,13 +8,14 @@
 import SwiftUI
 import PopupView
 
-struct CreateMainTravelView: View {
+struct MainTravelEditorView: View {
     
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State var title: String = ""
     @State private var isVisible: Bool = true
     
+    @State var editingMode: Bool // true: create, false: update
     @ObservedObject var viewModel = MainTravelViewModel(travel: MainTravel(likeNum: 0))
     @State var showToast = false // 게시글 등록 완룔 메시지
     @State var showWarning = false // 제목 입력 X시

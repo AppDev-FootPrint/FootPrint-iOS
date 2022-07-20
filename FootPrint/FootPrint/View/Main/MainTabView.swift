@@ -30,7 +30,7 @@ struct MainTabView: View {
                         Image(systemName: "magnifyingglass")
                     }.tag(1)
                 
-                CreateMainTravelView()
+                MainTravelEditorView(editingMode: false)
                     .onTapGesture {
                         selectedIndex = 2
                     }
