@@ -26,8 +26,18 @@ struct ProfileHeaderView: View {
             
                 HStack(spacing: 16) {
                     UserStatView(value: viewModel.user.stats?.posts ?? 0, title: "Posts")
-                    UserStatView(value: viewModel.user.stats?.followers ?? 0, title: "Followers")
-                    UserStatView(value: viewModel.user.stats?.following ?? 0, title: "Following")
+                    NavigationLink(destination: {
+                        UserListView(users: viewModel.followers)
+                    }, label: {
+                        UserStatView(value: viewModel.user.stats?.followers ?? 0, title: "Followers")
+                    })
+                    .foregroundColor(.black)
+                    NavigationLink(destination: {
+                        UserListView(users: viewModel.followings)
+                    }, label: {
+                        UserStatView(value: viewModel.user.stats?.following ?? 0, title: "Following")
+                    })
+                    .foregroundColor(.black)
                 }
                 .padding(.trailing)
             }

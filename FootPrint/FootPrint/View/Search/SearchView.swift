@@ -21,7 +21,7 @@ struct SearchView: View {
             // grid view/ list of users
             ZStack {
                 if inSearchMode {
-                    SearchListView(viewModel: viewModel, searchText: $searchText) // 구현되지않은 부분 
+                    
                 } else {
                     FeedGridView(config: .explore)
                 }

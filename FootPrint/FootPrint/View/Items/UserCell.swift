@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserCell: View {
     
-    let user: User
+    let user: String
     
     var body: some View {
         HStack {
@@ -19,13 +19,8 @@ struct UserCell: View {
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
             
-            VStack(alignment: .leading) {
-                Text("\(user.username)")
-                    .font(.system(size: 14, weight: .semibold))
-                
-                Text("djLover")
-                    .font(.system(size: 14))
-            }
+            Text("\(user)")
+                .font(.system(size: 14, weight: .semibold))
             
             Spacer()
         }

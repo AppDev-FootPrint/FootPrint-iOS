@@ -10,6 +10,8 @@ import Alamofire
 
 class ProfileViewModel: ObservableObject {
     @Published var user: User
+    @Published var followers = [String]()
+    @Published var followings = [String]()
     
     init(user: User) {
         self.user = user
@@ -128,8 +130,9 @@ class ProfileViewModel: ObservableObject {
                         let json = body.data(using: .utf8)!
                         do {
                             let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
-//                            for singleData in bundleData {
-//                            }
+                            for singleData in bundleData {
+                                self.followings.append(singleData.followerNickname)
+                            }
                             followings = bundleData.count
                             print("✅ DEBUG on fetchUserStats(): \(bundleData.count)")
                         } catch (let e) {
@@ -153,6 +156,9 @@ class ProfileViewModel: ObservableObject {
                         let json = body.data(using: .utf8)!
                         do {
                             let bundleData = try JSONDecoder().decode([FollowInfo].self, from: json)
+                            for singleData in bundleData {
+                                self.followers.append(singleData.followeeNickname)
+                            }
                             followers = bundleData.count
                             print("✅ DEBUG on fetchUserStats(): \(bundleData.count)")
                         } catch (let e) {
@@ -185,7 +191,7 @@ class ProfileViewModel: ObservableObject {
                                     posts += 1
                                 }
                             }
-                            print("✅ DEBUG on fetchUserStats(): \(bundleData.total)")
+                            print("✅ DEBUG on fetchUserStats(): posts #\(bundleData.total)")
                             
                             self.user.stats = UserStats(following: followings, posts: posts, followers: followers)
                         } catch (let e) {
