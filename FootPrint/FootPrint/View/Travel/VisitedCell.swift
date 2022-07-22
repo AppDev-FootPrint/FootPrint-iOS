@@ -10,16 +10,23 @@ import SwiftUI
 
 struct VisitedCell: View {
     
-    @State private var locName : String = "담배가게"
-    @State private var locAddr : String = "대전 서구 송리단길 12번길 15"
-    @State private var locComment : String = "담배가 정말 맛있었던 곳"
-    @State private var photo: String = "photo"
+    let detail: DetailTravel
+    
+    @State private var address : String = ""
+    @State private var roadAddress : String = ""
+    @State private var review : String = ""
+    
+    func getData() {
+        self.address = detail.address ?? ""
+        self.roadAddress = detail.roadAddress ?? ""
+        self.review = detail.review ?? ""
+    }
     
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "checkmark.circle.fill")
-                Text(locName)
+                Text(address)
                     .font(.system(size: 15, weight: .semibold))
                 
                 Spacer()
@@ -35,7 +42,7 @@ struct VisitedCell: View {
                 VStack {
                     HStack {
                         Image(systemName: "location")
-                        Text(locAddr)
+                        Text(self.roadAddress)
                             .font(.system(size:12))
                         
                         Spacer()
@@ -44,7 +51,7 @@ struct VisitedCell: View {
                     
                     HStack {
                         Image(systemName: "bubble.right")
-                        Text(locComment)
+                        Text(self.review)
                             .font(.system(size:12))
                         
                         Spacer()
@@ -59,11 +66,8 @@ struct VisitedCell: View {
             }
         }
         .padding()
-    }
-}
-
-struct VisitedCell_Previews: PreviewProvider {
-    static var previews: some View {
-        VisitedCell()
+        .onAppear() {
+            getData()
+        }
     }
 }

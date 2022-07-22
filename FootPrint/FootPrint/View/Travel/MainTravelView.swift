@@ -66,7 +66,7 @@ struct MainTravelView: View {
             }
             
             HStack {
-                ForEach (1..<4) { idx in
+                ForEach (0..<3) { idx in
                     CategoryButton(categoryName: "Day" + String(idx))
                         .padding([.leading, .trailing], 10)
                         .padding(.top)
@@ -74,9 +74,9 @@ struct MainTravelView: View {
             }
             
             ScrollView {
-                ForEach (0..<3) { _ in
-                    NavigationLink (destination: DetailTravelView(), label: {
-                        VisitedCell()
+                ForEach (viewModel.travel.simpleDetailTravelListResponse ?? []) { detail in
+                    NavigationLink (destination: DetailTravelView(id: detail.id, mainId: detail.mainTravelId), label: {
+                        VisitedCell(detail: detail)
                             .foregroundColor(.black)
                     })
                 }

@@ -15,6 +15,16 @@ struct DetailTravelView: View {
     @State var isHeartClicked: Bool = false
     @State var isClipped: Bool = false
     
+    var detailId: Int
+    var mainTravelId: Int
+    @ObservedObject var viewModel : DetailTravelViewModel
+    
+    init(id: Int, mainId: Int) {
+        self.detailId = id
+        self.mainTravelId = mainId
+        self.viewModel = DetailTravelViewModel(detail: DetailTravel(id: self.detailId, mainTravelId: self.mainTravelId))
+    }
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -131,11 +141,5 @@ struct DetailTravelView: View {
             }
             .padding(.top)
         }
-    }
-}
-
-struct DetailTravelView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailTravelView()
     }
 }
