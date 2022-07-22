@@ -16,6 +16,7 @@ struct MainTravel: Identifiable, Decodable {
     var isCompleted: Bool?
     var mainImagePath: String? // 중복불가
     var createDetailTravelRequest: [DetailTravel]?
+    var simpleDetailTravelListResponse: [DetailTravel]?
     
     var likeNum: Int?
     var commentCount: Int?
